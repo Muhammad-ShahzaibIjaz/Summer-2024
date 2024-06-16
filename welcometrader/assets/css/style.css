@@ -574,6 +574,13 @@ footer li a:hover{
     border-bottom: 1px solid #ddd;
 }
 
+
+@media (max-width:500px) {
+    .custom-bottom-border{
+        padding: 15px 10px 0px;
+    }
+}
+
 .panel-card .panel-body{
     padding: 15px 15px 5px 15px;
 }
