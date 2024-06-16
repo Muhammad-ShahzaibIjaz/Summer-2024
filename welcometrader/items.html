@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="big-screen">
+            <div class="upper-header">
+                <div class="plr-200">
+                    <ul class="header-ul">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Ordering</a></li>
+                        <li><a href="#">Payments</a></li>
+                        <li><a href="#">Shipping & Handling</a></li>
+                        <li><a href="#">Returns & Cancellations</a></li>
+                        <li><a class="d-flex align-items-center gap-1" href="#"><span><i class="fa fa-key"></i></span><span>Login</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="middle-header pb-3">
+                <div class="d-flex justify-content-around div-first-child">
+                    <div class="logo-div">
+                        <img src="assets/images/header-logo.png" alt="logo">
+                    </div>
+                    <div class="d-flex align-items-center gap-3 parentSearch">
+                        <div class="d-flex align-items-center gap-3 custom-searchForm">
+                            <input class="custom-input w-300" placeholder="Search for Products!" type="text" id="search-text">
+                            <button class="custom-btn searchBtn">SEARCH</button>
+                        </div>
+                        <button class="custom-btn custom-btn-cart"><i class="fa fa-shopping-cart fa-2x"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="lower-header">
+                <div class="container">
+                    <ul class="hover-ul">
+                        <li>
+                            <a href="#">Janitorial Supplies</a>
+                            <ul class="container bottom-menu">
+                                <div class="row">
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Chemicals</a></li>
+                                            <li><a href="#">Absorbents</a></li>
+                                            <li><a href="#">Bleach</a></li>
+                                            <li><a href="#">Car / Truck Wash &amp; Detailing</a></li>
+                                            <li><a href="#">Carpet Care</a></li>
+                                            <li><a href="#">Deodorant</a></li>
+                                            <li><a href="#">Disinfectants / Sanitizers</a></li>
+                                            <li><a href="#">Drain & Sewer Maintenance</a></li>
+                                            <li><a href="#">Show All</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Cleaning Supplies</a></li>
+                                            <li><a href="#">Brooms & Dust Pans</a></li>
+                                            <li><a href="#">Brushes</a></li>
+                                            <li><a href="#">Buckets & Wringers</a></li>
+                                            <li><a href="#">Carts</a></li>
+                                            <li><a href="#">Clean Room Supplies</a></li>
+                                            <li><a href="#">Dust Cloths & Dusters</a></li>
+                                            <li><a href="#">Floor Pads</a></li>
+                                            <li><a href="#">Show All</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Cleaning Equipment </a></li>
+                                            <li><a href="#">Burnishers</a></li>
+                                            <li><a href="#">Dryers</a></li>
+                                            <li><a href="#">Extractors</a></li>
+                                            <li><a href="#">Floor Machines</a></li>
+                                            <li><a href="#">Specialty</a></li>
+                                            <li><a href="#">Spotters</a></li>
+                                            <li><a href="#">Vacuum</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Liners</a></li>
+                                            <li><a href="#">Bio-Hazard</a></li>
+                                            <li><a href="#">High Density</a></li>
+                                            <li><a href="#">High Density Roll</a></li>
+                                            <li><a href="#">Low Density</a></li>
+                                            <li><a href="#">Low Density Roll</a></li>
+                                            <li><a href="#">Specialty</a></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                                <div class="row">
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Matting</a></li>
+                                            <li><a href="#">Specialty</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Paper</a></li>
+                                            <li><a href="#">Tissues</a></li>
+                                            <li><a href="#">Toilet Seat Covers &amp; Dispenser</a></li>
+                                            <li><a href="#">Towels</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Receptacles / Trash Cans</a></li>
+                                            <li><a href="#">Ash</a></li>
+                                            <li><a href="#">Recycle</a></li>
+                                            <li><a href="#">Sanitary Napkin</a></li>
+                                            <li><a href="#">Step</a></li>
+                                            <li><a href="#">Trash</a></li>
+                                            <li><a href="#">Wastebasket</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                        <ul>
+                                            <li class="dropdown-header"><a href="#">Restroom</a></li>
+                                            <li><a href="#">Baby Changing Table &amp; Seats</a></li>
+                                            <li><a href="#">Hand Dryers</a></li>
+                                            <li><a href="#">Mirrors</a></li>
+                                            <li><a href="#">Urinals and Accessories</a></li>
+                                        </ul>
+                                    </li>
+                                  </div>
+                              </ul>
+                        </li>
+                        <li>
+                            <a href="#">Skin & Personal Care</a>
+                            <ul class="container bottom-menu">
+                                <div class="row">
+                                    <li class="col-sm-3">
+                                      <ul>
+                                        <li class="dropdown-header"><a href="#">Personal Hygiene</a></li>
+                                        <li><a href="#">Deodorant</a></li>
+                                        <li><a href="#">Diapers</a></li>
+                                        <li><a href="#">Miscellaneous Personal Hygiene</a></li>
+                                        <li><a href="#">Mouthwash</a></li>
+                                        <li><a href="#">Napkins &amp; Tampons Dispenser</a></li>
+                                        <li><a href="#">Razors</a></li>
+                                        <li><a href="#">Sanitary Napkins &amp; Tampons</a></li>
+                                        <li><a href="#">Show All</a></li>
+                                      </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                      <ul>
+                                        <li class="dropdown-header"><a href="#">Skin Care</a></li>
+                                        <li><a href="#">Dispensers</a></li>
+                                        <li><a href="#">Lotion &amp; Moisturizers</a></li>
+                                        <li><a href="#">Sanitizers</a></li>
+                                        <li><a href="#">Skin Protection</a></li>
+                                        <li><a href="#">Soap</a></li>
+                                        <li><a href="#">Wipes</a></li>
+                                      </ul>
+                                    </li>
+                                    <div class="col-sm-3">&nbsp;</div>
+                                    <div class="col-sm-3">&nbsp;</div>
+                                  </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Food Service</a>
+                            <ul class="container bottom-menu"> 
+                                <div class="row">
+                                    <li class="col-sm-3">
+                                      <ul>
+                                        <li class="dropdown-header"><a href="#">Beverage Supply</a></li>
+                                        <li><a href="#">Coffee</a></li>
+                                        <li><a href="#">Coffee &amp; Tea Filters</a></li>
+                                        <li><a href="#">Cream, Sugar, &amp; Art. Sweetener</a></li>
+                                        <li><a href="#">Energy/Activity Drinks</a></li>
+                                        <li><a href="#">Hot Chocolates &amp; Cider</a></li>
+                                        <li><a href="#">Juices</a></li>
+                                        <li><a href="#">Machines &amp; Equipment</a></li>
+                                        <li><a href="#">Show All</a></li>
+                                      </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                      <ul>
+                                        <li class="dropdown-header"><a href="#">Food</a></li>
+                                        <li><a href="#">Candy</a></li>
+                                        <li><a href="#">Cereal</a></li>
+                                        <li><a href="#">Condiments</a></li>
+                                        <li><a href="#">Energy</a></li>
+                                        <li><a href="#">Frozen</a></li>
+                                        <li><a href="#">Jelly</a></li>
+                                        <li><a href="#">Miscellaneous</a></li>
+                                        <li><a href="#">Show All</a></li>
+                                      </ul>
+                                    </li>
+                                    <li class="col-sm-3">
+                                      <ul>
+                                        <li class="dropdown-header"><a href="#">Food Service</a></li>
+                                        <li><a href="#">Aprons &amp; Apparel</a></li>
+                                        <li><a href="#">Bags</a></li>
+                                        <li><a href="#">Bakery Supplies</a></li>
+                                        <li><a href="#">Beverage Dispenser &amp; Container</a></li>
+                                        <li><a href="#">Bowls &amp; Dessert Dishes</a></li>
+                                        <li><a href="#">Boxes</a></li>
+                                        <li><a href="#">Bussing Equipment</a></li>
+                                        <li><a href="#">Show All</a></li>
+                                      </ul>
+                                    </li>
+                                    <div class="col-sm-3">&nbsp;</div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Facilities & Grounds</a>
+                            <ul class="container bottom-menu">
+                                <div class="row">
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Facility Maintenance</a></li>
+                                      <li><a href="#">Air Cleaner Machine</a></li>
+                                      <li><a href="#">Batteries</a></li>
+                                      <li><a href="#">Fans</a></li>
+                                      <li><a href="#">Filters</a></li>
+                                      <li><a href="#">Heaters</a></li>
+                                      <li><a href="#">Key Organizers</a></li>
+                                      <li><a href="#">Locks</a></li>
+                                      <li><a href="#">Show All</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Grounds Maintenance</a></li>
+                                      <li><a href="#">Ice Melter</a></li>
+                                      <li><a href="#">Miscellaneous</a></li>
+                                      <li><a href="#">Paint &amp; Supplies</a></li>
+                                      <li><a href="#">Pick Up Tools &amp; Bags</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Lighting</a></li>
+                                      <li><a href="#">Fluorescent</a></li>
+                                      <li><a href="#">Halogen</a></li>
+                                      <li><a href="#">Incandescent</a></li>
+                                      <li><a href="#">Lamps - Floor/Table/Desk</a></li>
+                                      <li><a href="#">LED</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Safety</a></li>
+                                      <li ><a href="#">Apparel</a></li>
+                                      <li><a href="#">Back Support</a></li>
+                                      <li><a href="#">Dust Masks</a></li>
+                                      <li><a href="#">Ergonomic Support</a></li>
+                                      <li><a href="#">Eye</a></li>
+                                      <li><a href="#">Fire Extinguishers</a></li>
+                                      <li><a href="#">First Aid</a></li>
+                                      <li><a href="#">Show All</a></li>
+                                    </ul>
+                                  </li>
+                                </div>
+                                <div class="row">
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Tools &amp; Hardware</a></li>
+                                      <li><a href="#">Doorstops</a></li>
+                                      <li><a href="#">Electrical Supplies</a></li>
+                                      <li><a href="#">Extension Cords</a></li>
+                                      <li><a href="#">Fasteners, Clamps &amp; Straps</a></li>
+                                      <li><a href="#">Hand Tools</a></li>
+                                      <li><a href="#">Measuring &amp; Leveling Tools</a></li>
+                                      <li><a href="#">Padlocks</a></li>
+                                      <li><a href="#">Step Stools</a></li>
+                                    </ul>
+                                  </li>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Office</a>
+                            <ul class="container bottom-menu">
+                                <div class="row">
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Office Furniture</a></li>
+                                      <li><a href="#">Bookcases &amp; Shelving</a></li>
+                                      <li><a href="#">Carts &amp; Stands</a></li>
+                                      <li><a href="#">Chair Mats &amp; Floor Mats</a></li>
+                                      <li><a href="#">Chairs, Stools &amp; Seating Accessories</a></li>
+                                      <li><a href="#">Desk &amp; Workstation Add-Ons</a></li>
+                                      <li><a href="#">Desks &amp; Workstations</a></li>
+                                      <li><a href="#">File &amp; Storage Cabinets</a></li>
+                                      <li><a href="#">Show All</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Office Supplies</a></li>
+                                      <li><a href="#">Arts &amp; Crafts</a></li>
+                                      <li><a href="#">Binders &amp; Binding Supplies</a></li>
+                                      <li><a href="#">Calendars, Planners &amp; Personal Organizers</a></li>
+                                      <li><a href="#">Carrying Cases</a></li>
+                                      <li><a href="#">Cash Handling</a></li>
+                                      <li><a href="#">Cutting &amp; Measuring Devices</a></li>
+                                      <li><a href="#">Desk Accessories &amp; Workspace Organizers</a></li>
+                                      <li><a href="#">Show All</a></li>
+                                    </ul>
+                                  </li>
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Office Technology</a></li>
+                                      <li><a href="#">Audio Visual Equipment &amp; Accessories</a></li>
+                                      <li><a href="#">Backup Systems &amp; Disks</a></li>
+                                      <li><a href="#">Calculators</a></li>
+                                      <li><a href="#">Cameras, Camcorders &amp; Accessories</a></li>
+                                      <li><a href="#">Computer Cleaners</a></li>
+                                      <li><a href="#">Computer Hardware &amp; Accessories</a></li>
+                                      <li><a href="#">Computer Keyboards &amp; Mice</a></li>
+                                      <li><a href="#">Show All</a></li>
+                                    </ul>
+                                  </li>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Packaging</a>
+                            <ul class="container bottom-menu">
+                                <div class="row">
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Industrial Packaging</a></li>
+                                      <li><a href="#">Labels</a></li>
+                                    </ul>
+                                  </li>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                </div>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">More...</a>
+                            <ul class="container bottom-menu">
+                                <div class="row">
+                                  <li class="col-sm-3">
+                                    <ul>
+                                      <li class="dropdown-header"><a href="#">Industrial</a></li>
+                                      <li><a href="#">Marking Tools</a></li>
+                                    </ul>
+                                  </li>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                  <div class="col-sm-3">&nbsp;</div>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="small-screen">
+            <div class="top-nav">
+              <div>
+                <div class="d-flex align-items-center justify-content-evenly">
+                  <div class="d-flex justify-content-center align-item-center h-100">
+                    <button data-tab="menuBox" ><i class="fa-solid fa-bars"></i></button>
+                  </div>
+                  <div class="d-flex justify-content-center align-item-center h-100">
+                    <button data-tab="searchBox"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </div>
+                  <div class="d-flex justify-content-center align-item-center h-100">
+                    <img src="assets/images/header-logo-small.png" alt="">
+                  </div>
+                  <div class="d-flex justify-content-center align-item-center h-100">
+                    <button data-tab="loginBox"><i class="fa-solid fa-user"></i></button>
+                  </div>
+                  <div class="d-flex justify-content-center align-item-center h-100">
+                    <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="minSearchBox content-box d-none" id="searchBox" >
+              <div class="container">
+                <div class="searchBox">
+                  <input type="text" class="custom-input" placeholder="search" name="minSearch" id="minSearch">
+                  <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="loginBox content-box d-none" id="loginBox">
+              <div class="container">
+                <form class="loginBorderBox">
+                  <div class="form-group">
+                    <label for="userName">Username:</label>
+                    <input name="userName" type="text" maxlength="100" id="userName" class="form-control mb-2">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input name="password" type="password" maxlength="10" id="password" class="form-control mb-2">
+                  </div>
+                  <a id="btnLogin" href="#">Login</a>
+                  <a id="btnNewAccount" href="#">New Account</a>
+                </form>
+              </div>
+            </div>
+            <div class="small-menuBox content-box d-none" id="menuBox">
+              <div class="container">
+                <ul>
+                  <li class="small-main"><a href="#"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+                  <li class="small-main"><a href="#"><i class="fa fa-key"></i>&nbsp;Login</a></li>
+                  <li class="subSmall-main">
+                    <a href="#">Janitorial Supplies</a>
+                    <ul class="container bottom-menu">
+                        <div class="row">
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Chemicals</a></li>
+                                    <li><a href="#">Absorbents</a></li>
+                                    <li><a href="#">Bleach</a></li>
+                                    <li><a href="#">Car / Truck Wash &amp; Detailing</a></li>
+                                    <li><a href="#">Carpet Care</a></li>
+                                    <li><a href="#">Deodorant</a></li>
+                                    <li><a href="#">Disinfectants / Sanitizers</a></li>
+                                    <li><a href="#">Drain & Sewer Maintenance</a></li>
+                                    <li><a href="#">Show All</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Cleaning Supplies</a></li>
+                                    <li><a href="#">Brooms & Dust Pans</a></li>
+                                    <li><a href="#">Brushes</a></li>
+                                    <li><a href="#">Buckets & Wringers</a></li>
+                                    <li><a href="#">Carts</a></li>
+                                    <li><a href="#">Clean Room Supplies</a></li>
+                                    <li><a href="#">Dust Cloths & Dusters</a></li>
+                                    <li><a href="#">Floor Pads</a></li>
+                                    <li><a href="#">Show All</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Cleaning Equipment </a></li>
+                                    <li><a href="#">Burnishers</a></li>
+                                    <li><a href="#">Dryers</a></li>
+                                    <li><a href="#">Extractors</a></li>
+                                    <li><a href="#">Floor Machines</a></li>
+                                    <li><a href="#">Specialty</a></li>
+                                    <li><a href="#">Spotters</a></li>
+                                    <li><a href="#">Vacuum</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Liners</a></li>
+                                    <li><a href="#">Bio-Hazard</a></li>
+                                    <li><a href="#">High Density</a></li>
+                                    <li><a href="#">High Density Roll</a></li>
+                                    <li><a href="#">Low Density</a></li>
+                                    <li><a href="#">Low Density Roll</a></li>
+                                    <li><a href="#">Specialty</a></li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="row">
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Matting</a></li>
+                                    <li><a href="#">Specialty</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Paper</a></li>
+                                    <li><a href="#">Tissues</a></li>
+                                    <li><a href="#">Toilet Seat Covers &amp; Dispenser</a></li>
+                                    <li><a href="#">Towels</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Receptacles / Trash Cans</a></li>
+                                    <li><a href="#">Ash</a></li>
+                                    <li><a href="#">Recycle</a></li>
+                                    <li><a href="#">Sanitary Napkin</a></li>
+                                    <li><a href="#">Step</a></li>
+                                    <li><a href="#">Trash</a></li>
+                                    <li><a href="#">Wastebasket</a></li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-12">
+                                <ul>
+                                    <li class="dropdown-header"><a href="#">Restroom</a></li>
+                                    <li><a href="#">Baby Changing Table &amp; Seats</a></li>
+                                    <li><a href="#">Hand Dryers</a></li>
+                                    <li><a href="#">Mirrors</a></li>
+                                    <li><a href="#">Urinals and Accessories</a></li>
+                                </ul>
+                            </li>
+                          </div>
+                      </ul>
+                  </li>
+                  <li class="subSmall-main">
+                      <a href="#">Skin & Personal Care</a>
+                      <ul class="container bottom-menu">
+                          <div class="row">
+                              <li class="col-sm-12">
+                                <ul>
+                                  <li class="dropdown-header"><a href="#">Personal Hygiene</a></li>
+                                  <li><a href="#">Deodorant</a></li>
+                                  <li><a href="#">Diapers</a></li>
+                                  <li><a href="#">Miscellaneous Personal Hygiene</a></li>
+                                  <li><a href="#">Mouthwash</a></li>
+                                  <li><a href="#">Napkins &amp; Tampons Dispenser</a></li>
+                                  <li><a href="#">Razors</a></li>
+                                  <li><a href="#">Sanitary Napkins &amp; Tampons</a></li>
+                                  <li><a href="#">Show All</a></li>
+                                </ul>
+                              </li>
+                              <li class="col-sm-12">
+                                <ul>
+                                  <li class="dropdown-header"><a href="#">Skin Care</a></li>
+                                  <li><a href="#">Dispensers</a></li>
+                                  <li><a href="#">Lotion &amp; Moisturizers</a></li>
+                                  <li><a href="#">Sanitizers</a></li>
+                                  <li><a href="#">Skin Protection</a></li>
+                                  <li><a href="#">Soap</a></li>
+                                  <li><a href="#">Wipes</a></li>
+                                </ul>
+                              </li>
+                            </div>
+                      </ul>
+                  </li>
+                  <li class="subSmall-main">
+                      <a href="#">Food Service</a>
+                      <ul class="container bottom-menu"> 
+                          <div class="row">
+                              <li class="col-sm-12">
+                                <ul>
+                                  <li class="dropdown-header"><a href="#">Beverage Supply</a></li>
+                                  <li><a href="#">Coffee</a></li>
+                                  <li><a href="#">Coffee &amp; Tea Filters</a></li>
+                                  <li><a href="#">Cream, Sugar, &amp; Art. Sweetener</a></li>
+                                  <li><a href="#">Energy/Activity Drinks</a></li>
+                                  <li><a href="#">Hot Chocolates &amp; Cider</a></li>
+                                  <li><a href="#">Juices</a></li>
+                                  <li><a href="#">Machines &amp; Equipment</a></li>
+                                  <li><a href="#">Show All</a></li>
+                                </ul>
+                              </li>
+                              <li class="col-sm-12">
+                                <ul>
+                                  <li class="dropdown-header"><a href="#">Food</a></li>
+                                  <li><a href="#">Candy</a></li>
+                                  <li><a href="#">Cereal</a></li>
+                                  <li><a href="#">Condiments</a></li>
+                                  <li><a href="#">Energy</a></li>
+                                  <li><a href="#">Frozen</a></li>
+                                  <li><a href="#">Jelly</a></li>
+                                  <li><a href="#">Miscellaneous</a></li>
+                                  <li><a href="#">Show All</a></li>
+                                </ul>
+                              </li>
+                              <li class="col-sm-12">
+                                <ul>
+                                  <li class="dropdown-header"><a href="#">Food Service</a></li>
+                                  <li><a href="#">Aprons &amp; Apparel</a></li>
+                                  <li><a href="#">Bags</a></li>
+                                  <li><a href="#">Bakery Supplies</a></li>
+                                  <li><a href="#">Beverage Dispenser &amp; Container</a></li>
+                                  <li><a href="#">Bowls &amp; Dessert Dishes</a></li>
+                                  <li><a href="#">Boxes</a></li>
+                                  <li><a href="#">Bussing Equipment</a></li>
+                                  <li><a href="#">Show All</a></li>
+                                </ul>
+                              </li>
+                          </div>
+                      </ul>
+                  </li>
+                  <li class="subSmall-main">
+                      <a href="#">Facilities & Grounds</a>
+                      <ul class="container bottom-menu">
+                          <div class="row">
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Facility Maintenance</a></li>
+                                <li><a href="#">Air Cleaner Machine</a></li>
+                                <li><a href="#">Batteries</a></li>
+                                <li><a href="#">Fans</a></li>
+                                <li><a href="#">Filters</a></li>
+                                <li><a href="#">Heaters</a></li>
+                                <li><a href="#">Key Organizers</a></li>
+                                <li><a href="#">Locks</a></li>
+                                <li><a href="#">Show All</a></li>
+                              </ul>
+                            </li>
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Grounds Maintenance</a></li>
+                                <li><a href="#">Ice Melter</a></li>
+                                <li><a href="#">Miscellaneous</a></li>
+                                <li><a href="#">Paint &amp; Supplies</a></li>
+                                <li><a href="#">Pick Up Tools &amp; Bags</a></li>
+                              </ul>
+                            </li>
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Lighting</a></li>
+                                <li><a href="#">Fluorescent</a></li>
+                                <li><a href="#">Halogen</a></li>
+                                <li><a href="#">Incandescent</a></li>
+                                <li><a href="#">Lamps - Floor/Table/Desk</a></li>
+                                <li><a href="#">LED</a></li>
+                              </ul>
+                            </li>
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Safety</a></li>
+                                <li ><a href="#">Apparel</a></li>
+                                <li><a href="#">Back Support</a></li>
+                                <li><a href="#">Dust Masks</a></li>
+                                <li><a href="#">Ergonomic Support</a></li>
+                                <li><a href="#">Eye</a></li>
+                                <li><a href="#">Fire Extinguishers</a></li>
+                                <li><a href="#">First Aid</a></li>
+                                <li><a href="#">Show All</a></li>
+                              </ul>
+                            </li>
+                          </div>
+                          <div class="row">
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Tools &amp; Hardware</a></li>
+                                <li><a href="#">Doorstops</a></li>
+                                <li><a href="#">Electrical Supplies</a></li>
+                                <li><a href="#">Extension Cords</a></li>
+                                <li><a href="#">Fasteners, Clamps &amp; Straps</a></li>
+                                <li><a href="#">Hand Tools</a></li>
+                                <li><a href="#">Measuring &amp; Leveling Tools</a></li>
+                                <li><a href="#">Padlocks</a></li>
+                                <li><a href="#">Step Stools</a></li>
+                              </ul>
+                            </li>
+                          </div>
+                      </ul>
+                  </li>
+                  <li class="subSmall-main">
+                      <a href="#">Office</a>
+                      <ul class="container bottom-menu">
+                          <div class="row">
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Office Furniture</a></li>
+                                <li><a href="#">Bookcases &amp; Shelving</a></li>
+                                <li><a href="#">Carts &amp; Stands</a></li>
+                                <li><a href="#">Chair Mats &amp; Floor Mats</a></li>
+                                <li><a href="#">Chairs, Stools &amp; Seating Accessories</a></li>
+                                <li><a href="#">Desk &amp; Workstation Add-Ons</a></li>
+                                <li><a href="#">Desks &amp; Workstations</a></li>
+                                <li><a href="#">File &amp; Storage Cabinets</a></li>
+                                <li><a href="#">Show All</a></li>
+                              </ul>
+                            </li>
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Office Supplies</a></li>
+                                <li><a href="#">Arts &amp; Crafts</a></li>
+                                <li><a href="#">Binders &amp; Binding Supplies</a></li>
+                                <li><a href="#">Calendars, Planners &amp; Personal Organizers</a></li>
+                                <li><a href="#">Carrying Cases</a></li>
+                                <li><a href="#">Cash Handling</a></li>
+                                <li><a href="#">Cutting &amp; Measuring Devices</a></li>
+                                <li><a href="#">Desk Accessories &amp; Workspace Organizers</a></li>
+                                <li><a href="#">Show All</a></li>
+                              </ul>
+                            </li>
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Office Technology</a></li>
+                                <li><a href="#">Audio Visual Equipment &amp; Accessories</a></li>
+                                <li><a href="#">Backup Systems &amp; Disks</a></li>
+                                <li><a href="#">Calculators</a></li>
+                                <li><a href="#">Cameras, Camcorders &amp; Accessories</a></li>
+                                <li><a href="#">Computer Cleaners</a></li>
+                                <li><a href="#">Computer Hardware &amp; Accessories</a></li>
+                                <li><a href="#">Computer Keyboards &amp; Mice</a></li>
+                                <li><a href="#">Show All</a></li>
+                              </ul>
+                            </li>
+                          </div>
+                      </ul>
+                  </li>
+                  <li class="subSmall-main">
+                      <a href="#">Packaging</a>
+                      <ul class="container bottom-menu">
+                          <div class="row">
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Industrial Packaging</a></li>
+                                <li><a href="#">Labels</a></li>
+                              </ul>
+                            </li>
+                          </div>
+                      </ul>
+                  </li>
+                  <li class="subSmall-main">
+                      <a href="#">More...</a>
+                      <ul class="container bottom-menu">
+                          <div class="row">
+                            <li class="col-sm-12">
+                              <ul>
+                                <li class="dropdown-header"><a href="#">Industrial</a></li>
+                                <li><a href="#">Marking Tools</a></li>
+                              </ul>
+                            </li>
+                          </div>
+                      </ul>
+                  </li>
+                  <li class="small-main"><a href="#">Ordering</a></li>
+                  <li class="small-main"><a href="#">Payments</a></li>
+                  <li class="small-main"><a href="#">Shipping & Handling</a></li>
+                  <li class="small-main"><a href="#">Returns & Cancellations</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+    </header>
+    <div class="container ">
+        <div>
+            <ol class="custom-breadcumb">
+              <li>
+                <a href="#">
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="active">
+                <span>Cleaning Supplies</span>
+              </li>
+            </ol>
+        </div>
+        <div class="px-2 py-3">
+            <h1 class="body-heading">Cleaning Supplies</h1>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center category-item">
+                        <div class="category-panel panel panel-default">
+                          <div class="panel-body">
+                            <div class="category-item-image">
+                              <a href="#">
+                                <img class="img-responsive center-block" src="assets/images/Products/722381.jpeg">
+                              </a>
+                            </div>
+                          </div>
+                          <div class="panel-footer">
+                            <div class="category-name">
+                              <a href="#">Brooms &amp; Dust Pans</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 text-center category-item">
+                        <div class="category-panel panel panel-default">
+                          <div class="panel-body">
+                            <div class="category-item-image">
+                              <a href="#">
+                                <img class="img-responsive center-block" src="assets/images/Products/181948.jpeg">
+                              </a>
+                            </div>
+                          </div>
+                          <div class="panel-footer">
+                            <div class="category-name">
+                              <a href="#">Brushes</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <p class="heading">Categories</p>
+              <ul>
+                <li><a href="#">Janitorial Supplies</a></li>
+                <li><a href="#">Skin &amp; Personal Care</a></li>
+                <li><a href="#">Food Service</a></li>
+                <li><a href="#">Facilities &amp; Grounds</a></li>
+                <li><a href="#">Office</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-6">		
+              <p class="heading">Company Information</p>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Ordering</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#">Shipping &amp; Handling</a></li>
+                <li><a href="#">Returns &amp; Cancellations</a></li> 
+              </ul>
+            </div>
+            <div class="col-md-3 col-sm-12">
+            </div>
+            <div class="col-md-3 col-sm-6"> 
+              <p class="heading">Contact Us</p>
+              <p>4495 Valverde Way<br>Sacramento, CA 95823</p>
+              <p>Ph: 731.777.7770 <br>Email: <a href="mailto:info@welcomertraders.com">info@welcomertraders.com</a><br></p>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-sm-6">
+              <p>©2024 Welcome Traders- All Rights Reserved.</p>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex justify-content-end">
+                <img src="assets/images/cc.jpg" class="img-responsive">
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
