@@ -1,5 +1,4 @@
-#SUMMER 2024
-
+# <h1 align="center">SUMMER 2024</h1>
 ## My Static Sites
 
 This repository contains multiple static projects. Each project is stored in its own directory. Below is a list of the projects and their respective URLs for easy access.
