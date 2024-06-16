@@ -8,12 +8,12 @@ This repository contains multiple static projects. Each project is stored in its
 ### Welcome Trader
 - **Directory**: `welcometrader`
 - **Description**: A static site for the Welcome Trader project.
-- **URL**: [https://<username>.github.io/my-static-sites/welcometrader](https://<username>.github.io/my-static-sites/welcometrader)
+- **URL**: [https://<username>.github.io/my-static-sites/welcometrader](https://<username>.github.io/my-static-sites/welcometrader/index.html)
 
 ### Other Project
 - **Directory**: `other-project`
 - **Description**: A static site for another project.
-- **URL**: [https://<username>.github.io/my-static-sites/other-project](https://<username>.github.io/my-static-sites/other-project)
+- **URL**: [https://<username>.github.io/my-static-sites/other-project](https://<username>.github.io/my-static-sites/other-project/index.html)
 
 ## How to Add a New Project
 
