@@ -113,19 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for hover items in large screens
     function handleLargeScreenHoverItems() {
-        if (isLargeScreen()) {
-            const hoverItems = document.querySelectorAll('.subSmall-main');
-            hoverItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const menu = item.querySelector('.bottom-menu');
-                    const isActive = menu.classList.contains('active');
-                    document.querySelectorAll('.bottom-menu.active').forEach(activeMenu => activeMenu.classList.remove('active'));
-                    if (!isActive) {
-                        menu.classList.add('active');
-                    }
-                });
+        const hoverItems = document.querySelectorAll('.subSmall-main');
+        hoverItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const menu = item.querySelector('.bottom-menu');
+                const isActive = menu.classList.contains('active');
+                document.querySelectorAll('.bottom-menu.active').forEach(activeMenu => activeMenu.classList.remove('active'));
+                if (!isActive) {
+                    menu.classList.add('active');
+                }
             });
-        }
+        });
     }
 
     // Initialize event listeners
