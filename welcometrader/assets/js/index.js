@@ -92,25 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for data-tab buttons
     function handleDataTabClick() {
-        if (!isLargeScreen()) {
-            let currentlyVisibleDiv = null;
+        let currentlyVisibleDiv = null;
 
-            document.querySelectorAll('[data-tab]').forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetId = button.getAttribute('data-tab');
-                    const targetDiv = document.getElementById(targetId);
+        document.querySelectorAll('[data-tab]').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.getAttribute('data-tab');
+                const targetDiv = document.getElementById(targetId);
 
-                    if (currentlyVisibleDiv && currentlyVisibleDiv === targetDiv) {
-                        targetDiv.classList.add('d-none');
-                        currentlyVisibleDiv = null;
-                    } else {
-                        document.querySelectorAll('.content-box').forEach(div => div.classList.add('d-none'));
-                        targetDiv.classList.remove('d-none');
-                        currentlyVisibleDiv = targetDiv;
-                    }
-                });
+                if (currentlyVisibleDiv && currentlyVisibleDiv === targetDiv) {
+                    targetDiv.classList.add('d-none');
+                    currentlyVisibleDiv = null;
+                } else {
+                    document.querySelectorAll('.content-box').forEach(div => div.classList.add('d-none'));
+                    targetDiv.classList.remove('d-none');
+                    currentlyVisibleDiv = targetDiv;
+                }
             });
-        }
+        });
     }
 
     // Event listener for hover items in large screens
