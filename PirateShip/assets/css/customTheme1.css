@@ -6,6 +6,7 @@
     --color-black: #000000;
     --light-black: #333;
     --bright-skyBlue: #00a9ff;
+    --bright-skyBlue-hover: #00aaffba;
     --dim-skyBlue-hover: #d9f2ff;
     --dim-skyBlue: #2a6496;
     --label-red: #C82424;
@@ -19,6 +20,8 @@
     --light-black: rgba(255,255,255,0.9);
     --color-white: #000;
     --color-black: #fff;
+    --bright-skyBlue: #6658d3;
+    --bright-skyBlue-hover: #6658d3ba;
 }
 
 
@@ -150,7 +153,7 @@ input[type=email].form-control.dynamic,
 input[type=number].form-control.dynamic, 
 input[type=password].form-control.dynamic, 
 input[type=text].form-control.dynamic{
-    padding-top: 2px;
+    padding-top: 8px;
     padding-bottom: 3px;
 }
 
@@ -261,7 +264,7 @@ a.small {
 
 
 .dynamic-label.active {
-    top: -10px;
+    top: -6px;
     font-size: 15px;
     color: var(--bright-skyBlue);
     z-index: 1;
@@ -685,4 +688,21 @@ label.secondary-label {
     width: 30px;
     display: block;
     color: orange;
+}
+
+.action-button {
+	font-size: 1.25rem;
+	padding: 10px 15px;
+	width: 100%;
+	font-weight: 500;
+	background-color: var(--bright-skyBlue);
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+.action-button:focus {
+    outline: 0;
+}
+.action-button:hover{
+    background-color: var(--bright-skyBlue-hover);
 }
