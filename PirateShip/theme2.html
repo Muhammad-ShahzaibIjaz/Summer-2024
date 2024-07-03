@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Theme 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/customTheme2.css">
+    <link rel="stylesheet" href="assets/css/icon.css">
+</head>
+<body>
+    <main class="container py-5">
+        <h2 class="main-heading">Create a Shipping Label</h2>
+        <form class="form-horizontal" action="#">
+            <div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12 mb-1">
+                            <label class="control-label fs-medium-17">Ship To</label>
+                            <a href="#" id="copypaste-link" class="small fs-14">Paste Address</a>
+                        </div>
+                        <div class="col-sm-12 autoForm d-none">
+                            <textarea placeholder="Paste the full or partial address here (and edit it if needed) to auto-fill the fields below" name="copypaste" rows="5" class="form-control tt-complete"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="position-relative">
+                                <input type="email" name="email" id="email" class="form-control dynamic">
+                                <span class="dynamic-label">Email (optional)</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid email address</span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="phone" id="phone" class="form-control dynamic">
+                                <span class="dynamic-label">Phone (optional)</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid phone number</span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="name" id="name" class="form-control dynamic">
+                                <span class="dynamic-label">Name</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid name</span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="companyName" id="companyName" class="form-control dynamic">
+                                <span class="dynamic-label">Company (optional)</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid Company Name</span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="address" id="address" class="form-control dynamic">
+                                <span class="dynamic-label">Address</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid address</span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="aptName" id="aptName" class="form-control dynamic">
+                                <span class="dynamic-label">Apt / Unit / Suite / etc. (optional)</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid Apt Name</span>
+                        </div>
+                        <div class="col-md-2 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="city" id="city" class="form-control dynamic">
+                                <span class="dynamic-label">City</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid City</span>
+                        </div>
+                        <div class="col-md-2 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="state" id="state" class="form-control dynamic">
+                                <span class="dynamic-label">State</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid State</span>
+                        </div>
+                        <div class="col-md-2 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="zipCode" id="zipCode" class="form-control dynamic">
+                                <span class="dynamic-label">Zipcode</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid zipcode</span>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <select name="shipmentCountry" class="form-control tt-complete" id="shipment-country-id" placeholder="Country">
+                                <option value="AF">Afghanistan</option>
+                                <option value="AX">Aland Islands</option>
+                                <option value="AL">Albania</option>
+                                <option value="DZ">Algeria</option>
+                                <option value="AS">American Samoa</option>
+                                <option value="AD">Andorra</option>
+                                <option value="AO">Angola</option>
+                                <option value="AI">Anguilla</option>
+                                <option value="AQ">Antarctica</option>
+                                <option value="AG">Antigua and Barbuda</option>
+                                <option value="AR">Argentina</option>
+                                <option value="AM">Armenia</option>
+                                <option value="AW">Aruba</option>
+                                <option value="AU">Australia</option>
+                                <option value="AT">Austria</option>
+                                <option value="AZ">Azerbaijan</option>
+                                <option value="BS">Bahamas</option>
+                                <option value="BH">Bahrain</option>
+                                <option value="BD">Bangladesh</option>
+                                <option value="BB">Barbados</option>
+                                <option value="BY">Belarus</option>
+                                <option value="BE">Belgium</option>
+                                <option value="BZ">Belize</option>
+                                <option value="BJ">Benin</option>
+                                <option value="BM">Bermuda</option>
+                                <option value="BT">Bhutan</option>
+                                <option value="BO">Bolivia</option>
+                                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                                <option value="BA">Bosnia and Herzegovina</option>
+                                <option value="BW">Botswana</option>
+                                <option value="BV">Bouvet Island</option>
+                                <option value="BR">Brazil</option>
+                                <option value="IO">British Indian Ocean Territory</option>
+                                <option value="BN">Brunei Darussalam</option>
+                                <option value="BG">Bulgaria</option>
+                                <option value="BF">Burkina Faso</option>
+                                <option value="BI">Burundi</option>
+                                <option value="KH">Cambodia</option>
+                                <option value="CM">Cameroon</option>
+                                <option value="CA">Canada</option>
+                                <option value="CV">Cape Verde</option>
+                                <option value="KY">Cayman Islands</option>
+                                <option value="CF">Central African Republic</option>
+                                <option value="TD">Chad</option>
+                                <option value="CL">Chile</option>
+                                <option value="CN">China</option>
+                                <option value="CX">Christmas Island</option>
+                                <option value="CC">Cocos (Keeling) Islands</option>
+                                <option value="CO">Colombia</option>
+                                <option value="KM">Comoros</option>
+                                <option value="CG">Congo</option>
+                                <option value="CD">Congo, The Democratic Republic of the</option>
+                                <option value="CK">Cook Islands</option>
+                                <option value="CR">Costa Rica</option>
+                                <option value="CI">Cote d'Ivoire</option>
+                                <option value="HR">Croatia</option>
+                                <option value="CU">Cuba</option>
+                                <option value="CW">Curacao</option>
+                                <option value="CY">Cyprus</option>
+                                <option value="CZ">Czech Republic</option>
+                                <option value="DK">Denmark</option>
+                                <option value="DJ">Djibouti</option>
+                                <option value="DM">Dominica</option>
+                                <option value="DO">Dominican Republic</option>
+                                <option value="EC">Ecuador</option>
+                                <option value="EG">Egypt</option>
+                                <option value="SV">El Salvador</option>
+                                <option value="GQ">Equatorial Guinea</option>
+                                <option value="ER">Eritrea</option>
+                                <option value="EE">Estonia</option>
+                                <option value="SZ">Eswatini</option>
+                                <option value="ET">Ethiopia</option>
+                                <option value="FK">Falkland Islands (Malvinas)</option>
+                                <option value="FO">Faroe Islands</option>
+                                <option value="FJ">Fiji</option>
+                                <option value="FI">Finland</option>
+                                <option value="FR">France</option>
+                                <option value="GF">French Guiana</option>
+                                <option value="PF">French Polynesia</option>
+                                <option value="TF">French Southern Territories</option>
+                                <option value="GA">Gabon</option>
+                                <option value="GM">Gambia</option>
+                                <option value="GE">Georgia</option>
+                                <option value="DE">Germany</option>
+                                <option value="GH">Ghana</option>
+                                <option value="GI">Gibraltar</option>
+                                <option value="GR">Greece</option>
+                                <option value="GL">Greenland</option>
+                                <option value="GD">Grenada</option>
+                                <option value="GP">Guadeloupe</option>
+                                <option value="GU">Guam</option>
+                                <option value="GT">Guatemala</option>
+                                <option value="GG">Guernsey</option>
+                                <option value="GN">Guinea</option>
+                                <option value="GW">Guinea-Bissau</option>
+                                <option value="GY">Guyana</option>
+                                <option value="HT">Haiti</option>
+                                <option value="HM">Heard Island and McDonald Islands</option>
+                                <option value="VA">Holy See (Vatican City State)</option>
+                                <option value="HN">Honduras</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IS">Iceland</option>
+                                <option value="IN">India</option>
+                                <option value="ID">Indonesia</option>
+                                <option value="IR">Iran</option>
+                                <option value="IQ">Iraq</option>
+                                <option value="IE">Ireland</option>
+                                <option value="IM">Isle of Man</option>
+                                <option value="IL">Israel</option>
+                                <option value="IT">Italy</option>
+                                <option value="JM">Jamaica</option>
+                                <option value="JP">Japan</option>
+                                <option value="JE">Jersey</option>
+                                <option value="JO">Jordan</option>
+                                <option value="KZ">Kazakhstan</option>
+                                <option value="KE">Kenya</option>
+                                <option value="KI">Kiribati</option>
+                                <option value="XK">Kosovo</option>
+                                <option value="KW">Kuwait</option>
+                                <option value="KG">Kyrgyzstan</option>
+                                <option value="LA">Lao People's Democratic Republic</option>
+                                <option value="LV">Latvia</option>
+                                <option value="LB">Lebanon</option>
+                                <option value="LS">Lesotho</option>
+                                <option value="LR">Liberia</option>
+                                <option value="LY">Libya</option>
+                                <option value="LI">Liechtenstein</option>
+                                <option value="LT">Lithuania</option>
+                                <option value="LU">Luxembourg</option>
+                                <option value="MO">Macao</option>
+                                <option value="MG">Madagascar</option>
+                                <option value="MW">Malawi</option>
+                                <option value="MY">Malaysia</option>
+                                <option value="MV">Maldives</option>
+                                <option value="ML">Mali</option>
+                                <option value="MT">Malta</option>
+                                <option value="MH">Marshall Islands</option>
+                                <option value="MQ">Martinique</option>
+                                <option value="MR">Mauritania</option>
+                                <option value="MU">Mauritius</option>
+                                <option value="YT">Mayotte</option>
+                                <option value="MX">Mexico</option>
+                                <option value="FM">Micronesia, Federated States of</option>
+                                <option value="MD">Moldova</option>
+                                <option value="MC">Monaco</option>
+                                <option value="MN">Mongolia</option>
+                                <option value="ME">Montenegro</option>
+                                <option value="MS">Montserrat</option>
+                                <option value="MA">Morocco</option>
+                                <option value="MZ">Mozambique</option>
+                                <option value="MM">Myanmar</option>
+                                <option value="NA">Namibia</option>
+                                <option value="NR">Nauru</option>
+                                <option value="NP">Nepal</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="NC">New Caledonia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="NI">Nicaragua</option>
+                                <option value="NE">Niger</option>
+                                <option value="NG">Nigeria</option>
+                                <option value="NU">Niue</option>
+                                <option value="NF">Norfolk Island</option>
+                                <option value="KP">North Korea</option>
+                                <option value="MK">North Macedonia</option>
+                                <option value="MP">Northern Mariana Islands</option>
+                                <option value="NO">Norway</option>
+                                <option value="OM">Oman</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="PW">Palau</option>
+                                <option value="PS">Palestine</option>
+                                <option value="PA">Panama</option>
+                                <option value="PG">Papua New Guinea</option>
+                                <option value="PY">Paraguay</option>
+                                <option value="PE">Peru</option>
+                                <option value="PH">Philippines</option>
+                                <option value="PN">Pitcairn</option>
+                                <option value="PL">Poland</option>
+                                <option value="PT">Portugal</option>
+                                <option value="PR">Puerto Rico</option>
+                                <option value="QA">Qatar</option>
+                                <option value="RE">Reunion</option>
+                                <option value="RO">Romania</option>
+                                <option value="RU">Russian Federation</option>
+                                <option value="RW">Rwanda</option>
+                                <option value="BL">Saint Barthelemy</option>
+                                <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                <option value="KN">Saint Kitts and Nevis</option>
+                                <option value="LC">Saint Lucia</option>
+                                <option value="MF">Saint Martin (French part)</option>
+                                <option value="PM">Saint Pierre and Miquelon</option>
+                                <option value="VC">Saint Vincent and The Grenadines</option>
+                                <option value="WS">Samoa</option>
+                                <option value="SM">San Marino</option>
+                                <option value="ST">Sao Tome and Principe</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="SN">Senegal</option>
+                                <option value="RS">Serbia</option>
+                                <option value="SC">Seychelles</option>
+                                <option value="SL">Sierra Leone</option>
+                                <option value="SG">Singapore</option>
+                                <option value="SX">Sint Maarten (Dutch part)</option>
+                                <option value="SK">Slovak Republic</option>
+                                <option value="SI">Slovenia</option>
+                                <option value="SB">Solomon Islands</option>
+                                <option value="SO">Somalia</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                <option value="KR">South Korea</option>
+                                <option value="SS">South Sudan</option>
+                                <option value="ES">Spain</option>
+                                <option value="LK">Sri Lanka</option>
+                                <option value="SD">Sudan</option>
+                                <option value="SR">Suriname</option>
+                                <option value="SJ">Svalbard and Jan Mayen</option>
+                                <option value="SE">Sweden</option>
+                                <option value="CH">Switzerland</option>
+                                <option value="SY">Syrian Arab Republic</option>
+                                <option value="TW">Taiwan</option>
+                                <option value="TJ">Tajikistan</option>
+                                <option value="TZ">Tanzania, United Republic of</option>
+                                <option value="TH">Thailand</option>
+                                <option value="TL">Timor-Leste</option>
+                                <option value="TG">Togo</option>
+                                <option value="TK">Tokelau</option>
+                                <option value="TO">Tonga</option>
+                                <option value="TT">Trinidad and Tobago</option>
+                                <option value="TN">Tunisia</option>
+                                <option value="TR">Türkiye, Republic of</option>
+                                <option value="TM">Turkmenistan</option>
+                                <option value="TC">Turks and Caicos Islands</option>
+                                <option value="TV">Tuvalu</option>
+                                <option value="UG">Uganda</option>
+                                <option value="UA">Ukraine</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="GB">United Kingdom</option>
+                                <option selected="&quot;selected&quot;" value="US">United States</option>
+                                <option value="UM">United States Minor Outlying Islands</option>
+                                <option value="UY">Uruguay</option>
+                                <option value="UZ">Uzbekistan</option>
+                                <option value="VU">Vanuatu</option>
+                                <option value="VE">Venezuela</option>
+                                <option value="VN">Vietnam</option>
+                                <option value="VG">Virgin Islands, British</option>
+                                <option value="VI">Virgin Islands, U.S.</option>
+                                <option value="WF">Wallis and Futuna</option>
+                                <option value="EH">Western Sahara</option>
+                                <option value="YE">Yemen</option>
+                                <option value="ZM">Zambia</option>
+                                <option value="ZW">Zimbabwe</option>
+                              </select>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <label class="checkbox-label checkbox">
+                                <input class="js-rubberstamp_flag" type="checkbox" name="rubberstamp_flag"> 
+                                Rubber Stamps
+                                <small>Print extra information on the label 
+                                    <a href="#" class="intercom-link">Learn more.</a>
+                                </small>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 rubberStampDiv d-none">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="position-relative">
+                                        <input type="text" name="customReference1" id="customReference1" class="form-control dynamic">
+                                        <span class="dynamic-label">Rubber Stamp / Custom Reference 1</span>
+                                    </div>
+                                    <span class="wrong text-right">Please enter a valid rubber stamp</span>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="position-relative">
+                                        <input type="text" name="customReference2" id="customReference2" class="form-control dynamic">
+                                        <span class="dynamic-label">Rubber Stamp / Custom Reference 2</span>
+                                    </div>
+                                    <span class="wrong text-right">Please enter a valid rubber stamp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="control-label fs-medium-17">Ship From</label>
+                        </div>
+                        <div class="col-sm-12">
+                            <div id="shipFromSelection" class="dd-container">
+                                <div class="dd-select">
+                                    <a tab-index="0" class="dd-selected">
+                                        <div class="text-wrap">
+                                            <label class="dd-selected-text">Muhammad Shahzaib Ijaz</label>
+                                            <small class="dd-selected-desc">Muhammad Shahzaib Ijaz, railway colony, abc WA 20003</small>
+                                        </div>
+                                        <span class="dd-pointer dd-pointer-down"></span>
+                                    </a>
+                                    <ul class="dd-options">
+                                        <li tab-index="0" class="dd-option">
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text">Muhammad Shahzaib Ijaz</label>
+                                                <small class="dd-option-desc">Muhammad Shahzaib Ijaz, railway colony, abc WA 20003</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="1" class="dd-option">
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text">Don't use saved Ship From Address</label>
+                                                <small class="dd-option-desc">Create New Ship From Address</small>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="control-label fs-medium-17">Type of Packaging</label>
+                        </div>
+                        <div class="col-sm-12">
+                            <div id="packagingTypeSelection" class="dd-container">
+                                <div class="dd-select">
+                                    <a tab-index="0" class="dd-selected">
+                                        <div class="image-wrap">
+                                            <img class="dd-selected-image" src="./assets/images/package-icons/Parcel.png">
+                                        </div>
+                                        <div class="text-wrap">
+                                            <label class="dd-selected-text">Muhammad Shahzaib Ijaz</label>
+                                            <small class="dd-selected-desc">Muhammad Shahzaib Ijaz, railway colony, abc WA 20003</small>
+                                        </div>
+                                        <span class="dd-pointer dd-pointer-down"></span>
+                                    </a>
+                                    <ul class="dd-options" >
+                                        <li tab-index="0" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/Parcel.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">Box or Rigid Packaging</label>
+                                                <small class="dd-option-desc">Any custom box or thick parcel</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="1" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/SoftEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">Envelope, Padded Envelope, Poly Bag, Soft Pack, or Box in a Bag</label>
+                                                <small class="dd-option-desc">Measure &amp; use the Length and Width of the Envelope before putting anything in it</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="2" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/SmallFlatRateBox.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Small Flat Rate Box</label>
+                                                <small class="dd-option-desc">Small Flat Rate Mailing Box only</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="3" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/MediumFlatRateBox.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Medium Flat Rate Box</label>
+                                                <small class="dd-option-desc">Any Medium Flat Rate Box, including 1 (Top-Loading) and 2 (Side-Loading)</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="4" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/LargeFlatRateBox.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Large Flat Rate Box</label>
+                                                <small class="dd-option-desc">Any Large Flat Rate Box, including APO/FPO or Board Game Flat Rate Boxes</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="5" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/FlatRateEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Flat Rate Envelope</label>
+                                                <small class="dd-option-desc">Non-padded Flat Rate Envelope including Small and Window</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="6" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/FlatRateLegalEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Legal Flat Rate Envelope</label>
+                                                <small class="dd-option-desc">Priority Mail Legal Flat Rate Envelope</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="7" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/FlatRatePaddedEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Padded Flat Rate Envelope</label>
+                                                <small class="dd-option-desc">Flat Rate-branded Padded Envelope only</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="8" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/ExpressFlatRateEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Express Flat Rate Envelope</label>
+                                                <small class="dd-option-desc">Express-branded non-padded only</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="9" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/ExpressFlatRateLegalEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Express Legal Flat Rate Envelope</label>
+                                                <small class="dd-option-desc">Express-branded only</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="10" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/ExpressFlatRatePaddedEnvelope.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">USPS Priority Mail Express Padded Flat Rate Envelope</label>
+                                                <small class="dd-option-desc">Express-branded only</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="11" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/01.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">UPS Express Envelope</label>
+                                                <small class="dd-option-desc">UPS-branded Envelope for letter-sized documents</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="12" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/2a.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">UPS Small Express Box</label>
+                                                <small class="dd-option-desc">UPS-branded box for small-sized shipments</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="13" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/2b.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">UPS Medium Express Box</label>
+                                                <small class="dd-option-desc">UPS-branded box for medium-sized shipments</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="14" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/2c.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">UPS Large Express Box</label>
+                                                <small class="dd-option-desc">UPS-branded box for large-sized shipments</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="15" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/03.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">UPS Express Tube</label>
+                                                <small class="dd-option-desc">UPS-branded triangular box for rolled documents (blueprints, posters, etc.)</small>
+                                            </div>
+                                        </li>
+                                        <li tab-index="16" class="dd-option">
+                                            <div class="image-wrap">
+                                                <img class="dd-option-image" src="./assets/images/package-icons/04.png">
+                                            </div>
+                                            <div class="text-wrap">
+                                                <label class="dd-option-text ">UPS Express Pak</label>
+                                                <small class="dd-option-desc">UPS-branded poly envelope</small>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="control-label fs-medium-17">Package Dimensions (Inches)</label>
+                        </div>
+                        <div class="col-md-3 col-sm-4 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="configuration-key-length" id="configuration-key-length" class="form-control dynamic">
+                                <span class="dynamic-label">Length</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid length</span>
+                        </div>
+                        <p class="col-md-1 hidden-sm divider small-grey text-center fs-17"><span>x</span></p>
+                        <div class="col-md-3 col-sm-4 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="configuration-key-width" id="configuration-key-width" class="form-control dynamic">
+                                <span class="dynamic-label">Width</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid width</span>
+                        </div>
+                        <p class="col-md-1 hidden-sm divider small-grey text-center fs-17"><span>x</span></p>
+                        <div class="col-md-3 col-sm-4 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="configuration-key-height" id="configuration-key-height" class="form-control dynamic">
+                                <span class="dynamic-label">Height</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid height</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="control-label fs-medium-17">Package Weight</label>
+                        </div>
+                        <div class="col-md-3 col-sm-4 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="configuration-key-weight-pound" id="configuration-key-weight-pound" class="form-control dynamic">
+                                <span class="dynamic-label">Pounds</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid Weight</span>
+                        </div>
+                        <p class="col-md-1 hidden-sm divider small-grey text-center fs-17"><span>+</span></p>
+                        <div class="col-md-3 col-sm-4 mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="configuration-key-weight-ounces" id="configuration-key-weight-ounces" class="form-control dynamic">
+                                <span class="dynamic-label">Ounces</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid ounces value</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="checkbox-label toggle-header"> 
+                                Extra Services 
+                                <small class="extra-service-summary">No extra services activated</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 extraServiceDiv d-none">
+                            <div class="row">
+                                <div class="form-group mb-2">
+                                    <div class="col-sm-12">
+                                        <label class="checkbox-label checkbox">
+                                        <input class="toggle-checkbox" id="delivery_confirmation_flag" type="checkbox" name="delivery_confirmation_flag" check-value="Signature Confirmation" > Signature Confirmation </label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div id="signatureConfirmationSelection" class="dd-container d-none mb-0">
+                                            <div class="dd-select">
+                                                <a tab-index="0" class="dd-selected">
+                                                    <div class="text-wrap">
+                                                        <label class="dd-selected-text">Signature Confirmation</label>
+                                                        <small class="dd-selected-desc">Signature required for delivery</small>
+                                                    </div>
+                                                    <span class="dd-pointer dd-pointer-down"></span>
+                                                </a>
+                                                <ul class="dd-options">
+                                                    <li tab-index="0" class="dd-option">
+                                                        <div class="text-wrap">
+                                                            <label class="dd-option-text">Signature Confirmation</label>
+                                                            <small class="dd-option-desc">Signature required for delivery</small>
+                                                        </div>
+                                                    </li>
+                                                    <li tab-index="1" class="dd-option">
+                                                        <div class="text-wrap">
+                                                            <label class="dd-option-text">Adult Signature</label>
+                                                            <small class="dd-option-desc">21+ age verification required for delivery</small>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group  mb-2">
+                                    <div class="col-sm-12">
+                                        <label class="checkbox-label checkbox disabled">
+                                            <input type="checkbox" class="toggle-checkbox" disabled > Return Labels 
+                                            <small>To enable Return Labels, 
+                                                <a class="start-intercom-dialogue" href="#">just let us know</a>. 
+                                            </small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group  mb-2">
+                                    <div class="col-sm-12">
+                                        <label class="checkbox-label checkbox">
+                                            <input class="toggle-checkbox" id="insured_value_flag" type="checkbox" name="insured_value_flag" check-value="Insurance" > Insurance 
+                                            <small>Enter the value to add coverage by Shipsurance 
+                                                <a href="#" class="intercom-link">View Pricing, Excluded Items, and Terms</a>
+                                            </small>
+                                            <br>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="insuredFlagDiv d-none">
+                                            <div class="position-relative">
+                                                <input type="text" name="insured_value" id="insured_value" class="form-control dynamic">
+                                                <span class="dynamic-label">Declared Package Value ($)</span>
+                                            </div>
+                                            <span class="wrong text-right">Please enter a valid number e.g. 1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group  mb-2" >
+                                    <div class="col-sm-12">
+                                        <label class="checkbox-label checkbox">
+                                            <input class="mediamail_flag toggle-checkbox" id="qualifies_media_mail" type="checkbox" name="qualifies_media_mail" check-value="Media Mail" > Qualifies for Media Mail 
+                                            <small>Educational material only: books, music, or films (other products or any advertising prohibited)</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group  mb-2">
+                                    <div class="col-sm-12">
+                                        <label class="checkbox-label checkbox">
+                                            <input class="irregular_package_flag toggle-checkbox" id="irregular_package" type="checkbox" name="irregular_package" check-value="Irregular Package"> Irregular Package 
+                                            <small> For unusual package types like tubes, wooden crates, tires, etc. 
+                                                <a href="#" class="intercom-link">Learn More</a>
+                                            </small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12 mb-1">
+                            <label class="checkbox-label checkbox">
+                                <input class="hazardous_flag" type="checkbox" name="hazardous_flag"> 
+                                Hazardous Materials
+                                <small>Perfume, nail polish, hair spray, dry ice, lithium batteries, firearms, lighters, fuels, etc. 
+                                    <a href="#" class="intercom-link">Learn how to ship Hazardous Materials.</a>
+                                </small>
+                            </label>
+                            <div class="alertDiv d-none">
+                                <div class="alert alert-danger do-not-clear">
+                                    <strong>By using Pirate Ship, you certify that your shipment does not contain any undeclared <a href="#" class="intercom-link">hazardous materials</a> or any matter <a class="intercom-link" href="#">prohibited by law or postal regulation.</a>
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label class="checkbox-label checkbox">
+                                <input class="toggle-checkbox" type="checkbox" name="customs_form_enabled"> Customs Form <small>Required for International, Military APO/FPO, and U.S. Territories</small>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 customsFormDiv d-none">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-12 my-3">
+                                        <div class="position-relative">
+                                            <input type="text" name="customs_signer" id="customs_signer" class="form-control dynamic" value="Muhammad Shahzaib Ijaz">
+                                            <span class="dynamic-label">Sign Customs Form As</span>
+                                        </div>
+                                        <span class="wrong text-right">Please enter a valid text</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <label class="control-label fs-medium-17">Package Content Type</label>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div id="packageContentTypeSelection" class="dd-container">
+                                            <div class="dd-select">
+                                                <a tab-index="0" class="dd-selected">
+                                                    <div class="text-wrap">
+                                                        <label class="dd-selected-text">Merchandise</label>
+                                                        <small class="dd-selected-desc">Products that were purchased by your recipient; they will probably have to show a receipt proving the declared value is correct to receive the package.</small>
+                                                    </div>
+                                                    <span class="dd-pointer dd-pointer-down"></span>
+                                                </a>
+                                                <ul class="dd-options">
+                                                    <li tab-index="0" class="dd-option">
+                                                        <div class="text-wrap">
+                                                            <label class="dd-option-text">Merchandise</label>
+                                                            <small class="dd-option-desc">Products that were purchased by your recipient; they will probably have to show a receipt proving the declared value is correct to receive the package.</small>
+                                                        </div>
+                                                    </li>
+                                                    <li tab-index="1" class="dd-option">
+                                                        <div class="text-wrap">
+                                                            <label class="dd-option-text">Documents</label>
+                                                            <small class="dd-option-desc">For contracts and other printed documents only.</small>
+                                                        </div>
+                                                    </li>
+                                                    <li tab-index="2" class="dd-option">
+                                                        <div class="text-wrap">
+                                                            <label class="dd-option-text">Gift</label>
+                                                            <small class="dd-option-desc">Only choose this option if it’s actually a gift… it will not reduce the chance of your recipient having to pay import duties!</small>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-smp-12">
+                                        <div class="custom-items">
+                                            <div class="custom-item row">
+                                                <div class="col-sm-12">
+                                                    <label class="control-label upgradeLine">Customs Line Item #1 
+                                                        <small>
+                                                            <a href="javascript:void(0);" class="add-customs-item">Add Line Item</a>
+                                                        </small>
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-11 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 mb-4">
+                                                            <div class="position-relative">
+                                                                <input type="text" name="title" id="title" class="form-control dynamic">
+                                                                <span class="dynamic-label">Describe what you're shipping</span>
+                                                            </div>
+                                                            <span class="wrong text-right">Please enter a valid input</span>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-12 mb-4">
+                                                            <div class="position-relative">
+                                                                <input type="text" name="qty" id="qty" class="form-control dynamic">
+                                                                <span class="dynamic-label">Quantity</span>
+                                                            </div>
+                                                            <span class="wrong text-right">Please enter a valid input</span>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-12 mb-4">
+                                                            <div class="position-relative">
+                                                                <input type="text" name="item_value" id="item_value" class="form-control dynamic">
+                                                                <span class="dynamic-label">Item(s) Total Value in USD $</span>
+                                                            </div>
+                                                            <span class="wrong text-right">Please enter a valid input</span>
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12 mb-4 md-middle-between">
+                                                            <div class="flex-45">
+                                                                <div class="position-relative">
+                                                                    <input type="text" name="weight_lbs" id="weight_lbs" class="form-control dynamic">
+                                                                    <span class="dynamic-label">Item(s) Total Weight Pounds</span>
+                                                                </div>
+                                                                <span class="wrong text-right">Customs Line item requires a weight (lbs, oz or both)</span>
+                                                            </div>
+                                                            <p class="hidden-sm divider small-grey text-center fs-17"><span>+</span></p>
+                                                            <div class="flex-45">
+                                                                <div class="position-relative">
+                                                                    <input type="text" name="weight_lbs" id="weight_ounces" class="form-control dynamic">
+                                                                    <span class="dynamic-label">Item(s) Total Weight Ounces</span>
+                                                                </div>
+                                                                <span class="wrong text-right">Customs Line item requires a weight (lbs, oz or both)</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-12">
+                                                            <div class="position-relative">
+                                                                <input type="text" name="harmonization" id="harmonization" class="form-control dynamic">
+                                                                <span class="dynamic-label">Harmonization #</span>
+                                                                <span class="searchBtn"><a href="#">Search #'s</a></span>
+                                                            </div>
+                                                            <label class="secondary-label my-0">Required for Certain Countries - <a href="#" class="intercom-link">Learn more</a>
+                                                            </label>
+                                                        </div>
+                                                        <div class="col-md-6 mb-4">
+                                                            <select name="customs_item-country_of_origin" class="form-control tt-complete" id="shipment-country-id" placeholder="Country">
+                                                                <option value="AF">Afghanistan</option>
+                                                                <option value="AX">Aland Islands</option>
+                                                                <option value="AL">Albania</option>
+                                                                <option value="DZ">Algeria</option>
+                                                                <option value="AS">American Samoa</option>
+                                                                <option value="AD">Andorra</option>
+                                                                <option value="AO">Angola</option>
+                                                                <option value="AI">Anguilla</option>
+                                                                <option value="AQ">Antarctica</option>
+                                                                <option value="AG">Antigua and Barbuda</option>
+                                                                <option value="AR">Argentina</option>
+                                                                <option value="AM">Armenia</option>
+                                                                <option value="AW">Aruba</option>
+                                                                <option value="AU">Australia</option>
+                                                                <option value="AT">Austria</option>
+                                                                <option value="AZ">Azerbaijan</option>
+                                                                <option value="BS">Bahamas</option>
+                                                                <option value="BH">Bahrain</option>
+                                                                <option value="BD">Bangladesh</option>
+                                                                <option value="BB">Barbados</option>
+                                                                <option value="BY">Belarus</option>
+                                                                <option value="BE">Belgium</option>
+                                                                <option value="BZ">Belize</option>
+                                                                <option value="BJ">Benin</option>
+                                                                <option value="BM">Bermuda</option>
+                                                                <option value="BT">Bhutan</option>
+                                                                <option value="BO">Bolivia</option>
+                                                                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                                                                <option value="BA">Bosnia and Herzegovina</option>
+                                                                <option value="BW">Botswana</option>
+                                                                <option value="BV">Bouvet Island</option>
+                                                                <option value="BR">Brazil</option>
+                                                                <option value="IO">British Indian Ocean Territory</option>
+                                                                <option value="BN">Brunei Darussalam</option>
+                                                                <option value="BG">Bulgaria</option>
+                                                                <option value="BF">Burkina Faso</option>
+                                                                <option value="BI">Burundi</option>
+                                                                <option value="KH">Cambodia</option>
+                                                                <option value="CM">Cameroon</option>
+                                                                <option value="CA">Canada</option>
+                                                                <option value="CV">Cape Verde</option>
+                                                                <option value="KY">Cayman Islands</option>
+                                                                <option value="CF">Central African Republic</option>
+                                                                <option value="TD">Chad</option>
+                                                                <option value="CL">Chile</option>
+                                                                <option value="CN">China</option>
+                                                                <option value="CX">Christmas Island</option>
+                                                                <option value="CC">Cocos (Keeling) Islands</option>
+                                                                <option value="CO">Colombia</option>
+                                                                <option value="KM">Comoros</option>
+                                                                <option value="CG">Congo</option>
+                                                                <option value="CD">Congo, The Democratic Republic of the</option>
+                                                                <option value="CK">Cook Islands</option>
+                                                                <option value="CR">Costa Rica</option>
+                                                                <option value="CI">Cote d'Ivoire</option>
+                                                                <option value="HR">Croatia</option>
+                                                                <option value="CU">Cuba</option>
+                                                                <option value="CW">Curacao</option>
+                                                                <option value="CY">Cyprus</option>
+                                                                <option value="CZ">Czech Republic</option>
+                                                                <option value="DK">Denmark</option>
+                                                                <option value="DJ">Djibouti</option>
+                                                                <option value="DM">Dominica</option>
+                                                                <option value="DO">Dominican Republic</option>
+                                                                <option value="EC">Ecuador</option>
+                                                                <option value="EG">Egypt</option>
+                                                                <option value="SV">El Salvador</option>
+                                                                <option value="GQ">Equatorial Guinea</option>
+                                                                <option value="ER">Eritrea</option>
+                                                                <option value="EE">Estonia</option>
+                                                                <option value="SZ">Eswatini</option>
+                                                                <option value="ET">Ethiopia</option>
+                                                                <option value="FK">Falkland Islands (Malvinas)</option>
+                                                                <option value="FO">Faroe Islands</option>
+                                                                <option value="FJ">Fiji</option>
+                                                                <option value="FI">Finland</option>
+                                                                <option value="FR">France</option>
+                                                                <option value="GF">French Guiana</option>
+                                                                <option value="PF">French Polynesia</option>
+                                                                <option value="TF">French Southern Territories</option>
+                                                                <option value="GA">Gabon</option>
+                                                                <option value="GM">Gambia</option>
+                                                                <option value="GE">Georgia</option>
+                                                                <option value="DE">Germany</option>
+                                                                <option value="GH">Ghana</option>
+                                                                <option value="GI">Gibraltar</option>
+                                                                <option value="GR">Greece</option>
+                                                                <option value="GL">Greenland</option>
+                                                                <option value="GD">Grenada</option>
+                                                                <option value="GP">Guadeloupe</option>
+                                                                <option value="GU">Guam</option>
+                                                                <option value="GT">Guatemala</option>
+                                                                <option value="GG">Guernsey</option>
+                                                                <option value="GN">Guinea</option>
+                                                                <option value="GW">Guinea-Bissau</option>
+                                                                <option value="GY">Guyana</option>
+                                                                <option value="HT">Haiti</option>
+                                                                <option value="HM">Heard Island and McDonald Islands</option>
+                                                                <option value="VA">Holy See (Vatican City State)</option>
+                                                                <option value="HN">Honduras</option>
+                                                                <option value="HK">Hong Kong</option>
+                                                                <option value="HU">Hungary</option>
+                                                                <option value="IS">Iceland</option>
+                                                                <option value="IN">India</option>
+                                                                <option value="ID">Indonesia</option>
+                                                                <option value="IR">Iran</option>
+                                                                <option value="IQ">Iraq</option>
+                                                                <option value="IE">Ireland</option>
+                                                                <option value="IM">Isle of Man</option>
+                                                                <option value="IL">Israel</option>
+                                                                <option value="IT">Italy</option>
+                                                                <option value="JM">Jamaica</option>
+                                                                <option value="JP">Japan</option>
+                                                                <option value="JE">Jersey</option>
+                                                                <option value="JO">Jordan</option>
+                                                                <option value="KZ">Kazakhstan</option>
+                                                                <option value="KE">Kenya</option>
+                                                                <option value="KI">Kiribati</option>
+                                                                <option value="XK">Kosovo</option>
+                                                                <option value="KW">Kuwait</option>
+                                                                <option value="KG">Kyrgyzstan</option>
+                                                                <option value="LA">Lao People's Democratic Republic</option>
+                                                                <option value="LV">Latvia</option>
+                                                                <option value="LB">Lebanon</option>
+                                                                <option value="LS">Lesotho</option>
+                                                                <option value="LR">Liberia</option>
+                                                                <option value="LY">Libya</option>
+                                                                <option value="LI">Liechtenstein</option>
+                                                                <option value="LT">Lithuania</option>
+                                                                <option value="LU">Luxembourg</option>
+                                                                <option value="MO">Macao</option>
+                                                                <option value="MG">Madagascar</option>
+                                                                <option value="MW">Malawi</option>
+                                                                <option value="MY">Malaysia</option>
+                                                                <option value="MV">Maldives</option>
+                                                                <option value="ML">Mali</option>
+                                                                <option value="MT">Malta</option>
+                                                                <option value="MH">Marshall Islands</option>
+                                                                <option value="MQ">Martinique</option>
+                                                                <option value="MR">Mauritania</option>
+                                                                <option value="MU">Mauritius</option>
+                                                                <option value="YT">Mayotte</option>
+                                                                <option value="MX">Mexico</option>
+                                                                <option value="FM">Micronesia, Federated States of</option>
+                                                                <option value="MD">Moldova</option>
+                                                                <option value="MC">Monaco</option>
+                                                                <option value="MN">Mongolia</option>
+                                                                <option value="ME">Montenegro</option>
+                                                                <option value="MS">Montserrat</option>
+                                                                <option value="MA">Morocco</option>
+                                                                <option value="MZ">Mozambique</option>
+                                                                <option value="MM">Myanmar</option>
+                                                                <option value="NA">Namibia</option>
+                                                                <option value="NR">Nauru</option>
+                                                                <option value="NP">Nepal</option>
+                                                                <option value="NL">Netherlands</option>
+                                                                <option value="NC">New Caledonia</option>
+                                                                <option value="NZ">New Zealand</option>
+                                                                <option value="NI">Nicaragua</option>
+                                                                <option value="NE">Niger</option>
+                                                                <option value="NG">Nigeria</option>
+                                                                <option value="NU">Niue</option>
+                                                                <option value="NF">Norfolk Island</option>
+                                                                <option value="KP">North Korea</option>
+                                                                <option value="MK">North Macedonia</option>
+                                                                <option value="MP">Northern Mariana Islands</option>
+                                                                <option value="NO">Norway</option>
+                                                                <option value="OM">Oman</option>
+                                                                <option value="PK">Pakistan</option>
+                                                                <option value="PW">Palau</option>
+                                                                <option value="PS">Palestine</option>
+                                                                <option value="PA">Panama</option>
+                                                                <option value="PG">Papua New Guinea</option>
+                                                                <option value="PY">Paraguay</option>
+                                                                <option value="PE">Peru</option>
+                                                                <option value="PH">Philippines</option>
+                                                                <option value="PN">Pitcairn</option>
+                                                                <option value="PL">Poland</option>
+                                                                <option value="PT">Portugal</option>
+                                                                <option value="PR">Puerto Rico</option>
+                                                                <option value="QA">Qatar</option>
+                                                                <option value="RE">Reunion</option>
+                                                                <option value="RO">Romania</option>
+                                                                <option value="RU">Russian Federation</option>
+                                                                <option value="RW">Rwanda</option>
+                                                                <option value="BL">Saint Barthelemy</option>
+                                                                <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                                                                <option value="KN">Saint Kitts and Nevis</option>
+                                                                <option value="LC">Saint Lucia</option>
+                                                                <option value="MF">Saint Martin (French part)</option>
+                                                                <option value="PM">Saint Pierre and Miquelon</option>
+                                                                <option value="VC">Saint Vincent and The Grenadines</option>
+                                                                <option value="WS">Samoa</option>
+                                                                <option value="SM">San Marino</option>
+                                                                <option value="ST">Sao Tome and Principe</option>
+                                                                <option value="SA">Saudi Arabia</option>
+                                                                <option value="SN">Senegal</option>
+                                                                <option value="RS">Serbia</option>
+                                                                <option value="SC">Seychelles</option>
+                                                                <option value="SL">Sierra Leone</option>
+                                                                <option value="SG">Singapore</option>
+                                                                <option value="SX">Sint Maarten (Dutch part)</option>
+                                                                <option value="SK">Slovak Republic</option>
+                                                                <option value="SI">Slovenia</option>
+                                                                <option value="SB">Solomon Islands</option>
+                                                                <option value="SO">Somalia</option>
+                                                                <option value="ZA">South Africa</option>
+                                                                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                                                                <option value="KR">South Korea</option>
+                                                                <option value="SS">South Sudan</option>
+                                                                <option value="ES">Spain</option>
+                                                                <option value="LK">Sri Lanka</option>
+                                                                <option value="SD">Sudan</option>
+                                                                <option value="SR">Suriname</option>
+                                                                <option value="SJ">Svalbard and Jan Mayen</option>
+                                                                <option value="SE">Sweden</option>
+                                                                <option value="CH">Switzerland</option>
+                                                                <option value="SY">Syrian Arab Republic</option>
+                                                                <option value="TW">Taiwan</option>
+                                                                <option value="TJ">Tajikistan</option>
+                                                                <option value="TZ">Tanzania, United Republic of</option>
+                                                                <option value="TH">Thailand</option>
+                                                                <option value="TL">Timor-Leste</option>
+                                                                <option value="TG">Togo</option>
+                                                                <option value="TK">Tokelau</option>
+                                                                <option value="TO">Tonga</option>
+                                                                <option value="TT">Trinidad and Tobago</option>
+                                                                <option value="TN">Tunisia</option>
+                                                                <option value="TR">Türkiye, Republic of</option>
+                                                                <option value="TM">Turkmenistan</option>
+                                                                <option value="TC">Turks and Caicos Islands</option>
+                                                                <option value="TV">Tuvalu</option>
+                                                                <option value="UG">Uganda</option>
+                                                                <option value="UA">Ukraine</option>
+                                                                <option value="AE">United Arab Emirates</option>
+                                                                <option value="GB">United Kingdom</option>
+                                                                <option selected="&quot;selected&quot;" value="US">United States</option>
+                                                                <option value="UM">United States Minor Outlying Islands</option>
+                                                                <option value="UY">Uruguay</option>
+                                                                <option value="UZ">Uzbekistan</option>
+                                                                <option value="VU">Vanuatu</option>
+                                                                <option value="VE">Venezuela</option>
+                                                                <option value="VN">Vietnam</option>
+                                                                <option value="VG">Virgin Islands, British</option>
+                                                                <option value="VI">Virgin Islands, U.S.</option>
+                                                                <option value="WF">Wallis and Futuna</option>
+                                                                <option value="EH">Western Sahara</option>
+                                                                <option value="YE">Yemen</option>
+                                                                <option value="ZM">Zambia</option>
+                                                                <option value="ZW">Zimbabwe</option>
+                                                              </select>
+                                                            <label for="customs_item-country_of_origin" class="secondary-label">Item(s) Origin</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1 px-0 text-center">
+                                                    <span class="remove-customs-item pointer fs-20px">
+                                                        <i class="glyphicon glyphicon glyphicon-trash"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row mb-4">
+                                        <div class="col-sm-12">
+                                            <label class="control-label">International Tax ID <small>Optional: Used for prepaid VAT taxes (IOSS / HMRC / VOEC / EORI)
+                                                <a href="#" class="intercom-link">Learn more</a></small>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="position-relative">
+                                                <input type="text" name="taxID" id="taxID" class="form-control dynamic">
+                                                <span class="dynamic-label">Tax ID</span>
+                                            </div>
+                                            <span class="wrong text-right">Please enter a valid input</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="checkbox-label checkbox">
+                                <input class="savePackage_flag" type="checkbox" name="savePackage_flag"> 
+                                Save Package
+                                <small>
+                                    Save your settings for repeated use 
+                                </small>
+                            </label>
+                        </div>
+                        <div class="col-sm-12 savePackageDiv d-none mb-4">
+                            <div class="position-relative">
+                                <input type="text" name="savedPackage" id="savedPackage" class="form-control dynamic">
+                                <span class="dynamic-label">Enter a nickname for your Saved Package</span>
+                            </div>
+                            <span class="wrong text-right">Please enter a valid name</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <div class="themetogglerDiv">
+        <button class="themeToggler" title="ThemeChanger">
+            <span class="icon theme-toggle__sun">
+                <svg class="icon__svg" aria-labelledby="sun-title" role="img">
+                    <title id="sun-title">Switch to light mode.</title>
+                    <use href="#sun"></use>
+                </svg>
+            </span>
+        
+            <span class="icon theme-toggle__moon">
+                <svg class="icon__svg" aria-labelledby="moon-title" role="img">
+                    <title id="moon-title">Switch to dark mode.</title>
+                    <use href="#moon"></use>
+                </svg>
+            </span>
+        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+               <circle cx="12" cy="12" r="5"></circle>
+               <line x1="12" y1="1" x2="12" y2="3"></line>
+               <line x1="12" y1="21" x2="12" y2="23"></line>
+               <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+               <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+               <line x1="1" y1="12" x2="3" y2="12"></line>
+               <line x1="21" y1="12" x2="23" y2="12"></line>
+               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </symbol>
+            <symbol id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </symbol>
+        </svg>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
