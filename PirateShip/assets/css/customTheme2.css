@@ -546,6 +546,12 @@ span.wrong{
 }
 
 @media (max-width:767px) {
+    .hidden-sm{
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
     .flex-45{
         flex-basis: 100%;
     }
