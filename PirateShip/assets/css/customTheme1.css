@@ -230,6 +230,9 @@ small,
     }
 }
 
+[data-theme="dark"] h2.control-label{
+    color: #ffff;
+}
 
 .form-horizontal .control-label{
     margin-top: 0;
