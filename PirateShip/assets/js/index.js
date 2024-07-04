@@ -1,5 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    function addChangeListener(selector, targetClass) {
+        const checkbox = document.querySelector(selector);
+        if (checkbox) {
+            checkbox.addEventListener('change', () => {
+                toggleVisibility(targetClass);
+            });
+        }
+    }
+    
+
+    function initializeFormTogglers() {
+        addChangeListener('input[name="customs_form_enabled"]', '.customsFormDiv');
+        addChangeListener('input[name="warehouse-use-origin-as-return"]', '.returnAddressDiv');
+        addChangeListener('input[name="warehouse-save-for-reuse"]', '.nickNameDiv');
+    }
+
+    
+    function newShipAddressToggler() {
+        const shipFromSelectionDiv = document.querySelector('#shipFromSelection');
+        if(shipFromSelectionDiv){
+            const indexNumber = shipFromSelectionDiv.querySelector('.dd-selected').getAttribute('tab-index');
+            const newShipAddress = document.querySelector('#new-ship-from-address-form');
+            if(indexNumber === '1'){
+                newShipAddress.classList.remove('d-none');
+            }
+            else{
+                newShipAddress.classList.add('d-none');
+            }
+        }
+    }
+    
     function removeCustomItem(){
         const customItems = document.querySelector('.custom-items');
         if(customItems){
@@ -43,15 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             customItemsContainer.appendChild(clone);
-        }
-    }
-
-    function customFormEnabler(){
-        const customsFormCheckbox = document.querySelector('input[name="customs_form_enabled"]');
-        if(customsFormCheckbox){
-            customsFormCheckbox.addEventListener('change', () => {
-                toggleVisibility('.customsFormDiv');
-            });
         }
     }
 
@@ -155,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selection = option.closest('.dd-select');
         selection.classList.remove('active');
         hideSelectedIndexOption();
+        newShipAddressToggler();
     }
 
 
@@ -296,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
     addServiceSummary();
     togglerHeaderEventListener();
     removeCustomItem();
-    customFormEnabler();
+    initializeFormTogglers();
     initializeOptionClickHandlers([
         {
             selector: '#packageContentTypeSelection',
