@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     //FUNCTION TO HANDLE COPYPASTE TEXTAREA CLICK BUTTON EVENT
-    function copyPasteEvent() {
+    function copyPasteEventToggler() {
         const copyPasteButton = document.querySelector('#copypaste-link');
         if (copyPasteButton) {
             copyPasteButton.addEventListener('click', (event) => {
@@ -263,6 +263,59 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    //FUNCTION TO HANDLE ADDRESS AUTOFILL FUNCTIONALITY
+    function autoFillAddress() {
+        const textArea = document.querySelector('textarea[name="copypaste"]');
+        if (!textArea) return;
+    
+        textArea.addEventListener('input', () => {
+            const form = document.querySelector('#originalForm');
+            if (!form) return;
+    
+            // CLEAR ALL FIELDS INITIALLY
+            const fieldsToClear = ['#name', '#address', '#aptName', '#city', '#state', '#zipCode'];
+            fieldsToClear.forEach(selector => form.querySelector(selector).value = '');
+    
+            const addressLines = textArea.value.split('\n').map(line => line.trim()).filter(line => line);
+    
+            if (!addressLines.length) return;
+    
+            let currentIndex = 0;
+    
+            // CHECK IF THE FIRST LINE IS LIKELY A NAME
+            if (!/^\d/.test(addressLines[0])) {
+                form.querySelector('#name').value = addressLines[currentIndex++];
+            }
+    
+            if (addressLines.length > currentIndex) {
+                form.querySelector('#address').value = addressLines[currentIndex++];
+            }
+    
+            if (addressLines.length > currentIndex) {
+                const [city, stateZip] = addressLines[currentIndex].split(',');
+                if (city && stateZip) {
+                    form.querySelector('#city').value = city.trim();
+    
+                    const [state, zipCode] = stateZip.trim().split(' ');
+                    if (state && zipCode) {
+                        form.querySelector('#state').value = state;
+                        form.querySelector('#zipCode').value = zipCode;
+                    }
+                }
+                currentIndex++;
+            }
+    
+            if (addressLines.length > currentIndex) {
+                form.querySelector('#aptName').value = addressLines[currentIndex];
+            }
+    
+            dynamicLabelHandler();
+        });
+    }
+    
+    
+    
 
     //FUNCTION TO HANDLE THE LABEL OF THE DYNAMIC INPUT FIELD WHICH DON'T HAVE PLACEHOLDER'S BUT WANT PLACEHOLDER EFFECT 
     function dynamicLabelHandler() {
@@ -308,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // INITIALIZING EVENT LISTENERS
-    copyPasteEvent();
+    copyPasteEventToggler();
     dynamicLabelHandler();
     rubberStampToggler();
     hazardousStampToggler();
@@ -339,4 +392,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ]);
     themeToggler();
+    autoFillAddress();
 });
