@@ -1,0 +1,36 @@
+<svg width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="49" height="49" fill="#1E1E1E"/>
+<g id="Expans Dasboard" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="1908" transform="translate(-63 -393)" fill="#F0F2F3"/>
+<rect id="Rectangle 5490" x="-63" y="-393" width="175.391" height="1360.61" fill="white"/>
+<g id="Rectangle 5498">
+<mask id="path-2-inside-1_0_1" fill="white">
+<path d="M-63 -393H332V1515H-63V-393Z"/>
+</mask>
+<path d="M-63 -393H332V1515H-63V-393Z" fill="white"/>
+<path d="M331 -393V1515H333V-393H331Z" fill="#B9B9B9" mask="url(#path-2-inside-1_0_1)"/>
+</g>
+<g id="Group 1171275937">
+<g id="Group 1171275936">
+<g id="Group 1171275935">
+<g id="Frame 1321315191">
+<g id="Frame 1321315190">
+<g id="ai-svgrepo-com 1">
+<g id="Page-1">
+<g id="icon">
+<path id="Combined-Shape" fill-rule="evenodd" clip-rule="evenodd" d="M36.5813 12.2353V36.104H12.7127V12.2353H36.5813ZM22.7589 18.2025H20.4343L16.0211 30.1368H18.1182L18.9514 27.8038H24.2344L25.0497 30.1368H27.2732L22.7589 18.2025ZM30.9958 18.2025H28.9071V30.1368H30.9958V18.2025ZM21.579 20.2048L23.6595 26.1587H19.5316L21.579 20.2048ZM38.5704 30.1368H42.5485V34.1149H38.5704V30.1368ZM14.7017 38.093H18.6798V42.0711H14.7017V38.093ZM22.6579 38.093H26.636V42.0711H22.6579V38.093ZM14.7017 6.26819H18.6798V10.2463H14.7017V6.26819ZM30.6142 38.093H34.5923V42.0711H30.6142V38.093ZM22.6579 6.26819H26.636V10.2463H22.6579V6.26819ZM30.6142 6.26819H34.5923V10.2463H30.6142V6.26819ZM38.5704 22.1806H42.5485V26.1587H38.5704V22.1806ZM6.74551 30.1368H10.7236V34.1149H6.74551V30.1368ZM38.5704 14.2244H42.5485V18.2025H38.5704V14.2244ZM6.74551 22.1806H10.7236V26.1587H6.74551V22.1806ZM6.74551 14.2244H10.7236V18.2025H6.74551V14.2244Z" fill="#A1A1AA"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="1908" fill="white" transform="translate(-63 -393)"/>
+</clipPath>
+</defs>
+</svg>

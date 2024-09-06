@@ -1,0 +1,357 @@
+@media (max-width:1199px) {
+    .joinUs-counterDiv .d-flex.gap-4{
+        flex-direction: column;
+    }
+    .pricing-package-one-box .box-title h4{
+        font-size: 20px;
+    }
+    .popular-movie-six-img img{
+        height: 440px;
+    }
+    .lower-content-upper2{
+        gap: 1rem!important;
+    }
+    .headerContent-heading{
+        line-height: 65px;
+        font-size: 50px;
+    }
+}
+
+@media (max-width:991px) {
+    .header-heading{
+        text-align: center;
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .main-para p{
+        font-size: 20px;
+    }
+    .theme-btn{
+        padding: 16px 40px;
+        font-size: 1.1rem;
+    }
+    .joinUs-section, 
+    .chooseUs-section,
+    .special-offer,
+    .movies-section,
+    .movie-detials,
+    .shop-one,
+    .product-details,
+    .blogs-section{
+        padding: 80px 0px;
+    }
+    .offer-section-heading{
+        width: 95%;
+    }
+    .joinus-one-right,
+    .specialOffer-right{
+        padding-left: 0;
+        margin-top: 100px;
+    }
+    .offer-section-title{
+        justify-content: center;
+    }
+    .joinUs-section-heading,
+    .specialOffer-section-heading{
+        text-align: center;
+    }
+    .joinUs-section-desc p,
+    .specialOffer-section-desc{
+        text-align: center;
+    }
+    .joinUs-counterDiv .d-flex.gap-4,
+    .router-div{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .theme-btn-div{
+        justify-content: center;
+    }
+    .whychoose-one-box h4{
+        text-align: center;
+    }
+    .pricing-package-one-box .box-title h4{
+        font-size: 24px;
+    }
+    .popular-movie-six-img img{
+        height: 100%;
+        object-fit: cover;
+    }
+    .thm-btn{
+        font-size: 12px;
+        padding: 12px 25px;
+    }
+    .movie-name h3{
+        font-size: 45px;
+    }
+    .movie-image-left img{
+        width: 100%;
+        height: 100%;
+    }
+    .hidden-effect:first-child{
+        display: none;
+    }
+}
+
+
+@media (max-width:895px) {
+    .header-para{
+        display: none;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .whychoose-one-box{
+        height: 205px;
+        gap: 0.75rem;
+    }
+    .parent-footerDiv p{
+        width: 90%;
+    }
+    .movies-section-heading{
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    .movies-section-title{
+        justify-content: center;
+    }
+    .popular-movie-one-top .d-flex.mb-50p{
+        justify-content: center;
+    }
+    .hidden-effect:nth-child(2){
+        display: none;
+    }
+    .blog-heading{
+        line-height: 45px;
+    }
+
+}
+
+@media (max-width:600px) {
+    .header-heading{
+        font-size: 38px;
+        line-height: 50px;
+        margin: 0px 10px;
+    }
+    .main-para p{
+        font-size: 16px;
+    }
+    .theme-btn{
+        font-size: 1rem;
+    }
+    header{
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+    }
+    .headerContent-Container{
+        margin-top: 80px;
+    }
+    .custom-navBtn{
+        display: block;
+    }
+    .custom-minNav{
+        display: block;
+        width: 100%;
+    }
+    .nav-div,
+    .logo-div{
+        display: none;
+    }
+    #search{
+        width: 100%;
+        margin: 0;
+    }
+    .nav-min-div .custom-nav{
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .nav-min-div {
+        position: relative;
+        overflow: hidden;
+        height: 0;
+        margin-top: 0;
+        transition: all 0.3s ease;
+    }
+    .nav-min-div-full {
+        height: 170px!important;
+        margin-top: 40px;
+        transition: all 0.3s ease;
+    }
+    .offer-section-heading, 
+    .joinUs-section-heading{
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .offer-section-shape2,
+    .offer-section-shape3{
+        display: none;
+    }
+
+    .offer-box{
+        padding: 50px 34px 25px 34px;
+    }
+
+    .offer-box h3{
+        font-size: 22px;
+    }
+    .custom-image-row{
+        display: none;
+    }
+    .joinus-one-right,
+    .specialOffer-right{
+        margin-top: 0px;
+    }
+    .joinUs-counterDiv .d-flex.gap-4{
+        gap: 0!important;
+        justify-content: space-evenly;
+    }
+    .joinUs-counterDiv .d-flex.gap-4 .d-flex.gap-2.align-items-center{
+        flex-direction: column;
+    }
+    .joinUs-count,
+    .joinUs-countText{
+        text-align: center;
+    }
+    .headerContent-Container h4{
+        font-size: 18px;
+        margin-bottom: 16px;
+        padding: 0px 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .headerContent-heading{
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width:575px) {
+    .movie-detail-right{
+        margin-top: 50px;
+    }
+    .custom-img > *{
+        width: 48%;
+        justify-content: center;
+    }
+    .top-cast__single{
+        flex-direction: column;
+    }
+    .top-cast__content p,
+    .top-cast__content h5{
+        text-align: center;
+    }
+    .movie-more-review_right{
+        margin-left: 0;
+    }
+    .movie-more-review__text-box-one{
+        justify-content: center;
+    }
+    .comment-metadata p,
+    .comment-one__title{
+        width: 100%;
+        text-align: center;
+    }
+    .comment-one__title{
+        line-height: 48px;
+    }
+    .fun-facttext p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .top-content{
+        flex-direction: column;
+        gap: 1.4rem;
+    }
+    .margin-left{
+        margin-left: 0;
+    }
+    .social-box-div,
+    .tag-div{
+        justify-content: center!important;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:450px) {
+    .theme-btn{
+        padding: 16px 30px;
+    }
+    .h-90{
+        height: 70px;
+    }
+    .footer-logo h3{
+        font-size: 35px;
+    }
+    .headerContent-heading{
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .inner-box2 .blockquote-div{
+        padding: 10px;
+    }
+    .inner-box2 .blockquote-div blockquote{
+        margin: 15px 20px;
+    }
+}
+
+
+@media (max-width: 410px) {
+    .lower-content-upper3{
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+    .lower-content-upper3 div{
+        gap: 0.65rem!important;
+    }
+}
+
+@media (max-width:345px) {
+    .theme-btn{
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+    .joinUs-counterDiv .d-flex.gap-4,
+    .router-div{
+        flex-direction: column;
+        gap: 1.2rem!important;
+        justify-content: space-evenly;
+    }
+    .product-details__title{
+        text-align: center;
+    }
+    .review-line{
+        flex-direction: column;
+    }
+    .lower-content-upper,
+    .lower-content-upper2{
+        gap: 0.75rem!important;
+    }
+    .comment-anchor{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+    .comment-anchor .comment-line{
+        display: none;
+    }
+}
+
+
+@media (max-width:300px) {
+    .nav-min-div-full {
+        height: 190px!important;
+    }
+    .thm-btn{
+        padding: 16px 20px;
+    }
+    .lower-content-upper,
+    .lower-content-upper2{
+        flex-direction: column;
+        gap: 0.5rem!important;
+    }
+}

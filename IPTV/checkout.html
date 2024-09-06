@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/moviesDetails.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/minStyle.css">
+</head>
+<body>
+    <div class="main-Container">
+        <header id="main-header">
+            <div class="logo-div">
+                <a href="#!">
+                    <img class="h-40" src="assets/images/logo.png" alt="">
+                    SURE IPTV
+                </a>
+            </div>
+            <div class="header-para">
+                <p>Sure IPTV – Premium indian IPTV for UK, USA, Canada Users</p>
+            </div>
+            <div class="nav-div">
+                <ul class="custom-nav">
+                    <li class="custom-nav-item"><a href="#!"><i class="fa-solid fa-user"></i></a></li>
+                    <li class="custom-nav-item"><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                    <li class="custom-nav-item dropdown">
+                        <a href="#!" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><input type="text" placeholder="Search Here.." name="search" id="search"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="custom-minNav">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="min-logo-div">
+                        <a href="#!">
+                            <img class="h-40" src="assets/images/logo.png" alt="">
+                            SURE IPTV
+                        </a>
+                    </div>
+                    <div class="custom-navBtn">
+                        <a id="navBtn" href="#!"><i class="fa-solid fa-bars"></i></a>
+                    </div>
+                </div>
+                <div class="nav-min-div">
+                    <div class="header-para2 text-center">
+                        <p>Sure IPTV – Premium indian IPTV for UK, USA, Canada Users</p>
+                    </div>
+                    <div class="mt-4 d-flex flex-column gap-3">
+                        <ul class="custom-nav">
+                            <li class="custom-nav-item"><a href="#!"><i class="fa-solid fa-user"></i></a></li>
+                            <li class="custom-nav-item"><a href="#!"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                        </ul>
+                        <div class="position-relative"><input type="text" placeholder="Search Here.." name="search" id="search"><a class="search-btn" href="#"><i class="fas fa-search"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="headerContent-Container">
+            <div class="white-overlay"></div>
+            <div class="container position-relative z-2">
+                <h4 class="text-center"><a href="#!">Home</a><span>|</span><a href="#!">Customer Detail</a><span>|</span><span>Checkout</span></h4>
+                <h2 class="headerContent-heading text-center">Checkout</h2>
+            </div>
+        </div>
+        <section class="details-section">
+            <div class="container">
+                <div class="mt-2">
+                    <form action="#!" method="">
+                        <div class="row">
+                            <h4 class="trailer-heading mb-4">Personal Information</h4>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="firstName" id="firstName" value="" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="lastName" id="lastName" value="" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="email" name="email" id="email" value="" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="tel" name="phone" id="phone" value="" placeholder="Phone No" oninput="validatePhoneNumber(this)" required>
+                                </div>
+                            </div>
+                            <h4 class="trailer-heading my-4">Billing Address</h4>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="companyAddress" id="companyAddress" value="" placeholder="Company Address (Optional)">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="streetAddress" id="streetAddress" value="" placeholder="Street Address">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="streetAddress2" id="streetAddress2" value="" placeholder="Street Address 2">
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="city" id="city" value="" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="postalCode" id="postalCode" value="" placeholder="Post Code">
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 countrySelection">
+                                <div class="countrySelect">
+                                    <p class="selectedOption">Country</p>
+                                </div>
+                                <div class="content">
+                                    <ul class="countryOption"></ul>
+                                </div>
+                            </div>
+                            <h4 class="trailer-heading my-4">Payment Details</h4>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="cardNo" id="cardNo" value="" required oninput="validateCard(this, 16)" placeholder="Card Number">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="cardName" id="cardName" value="" required placeholder="Name on Card">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="expiryMonth" id="expiryMonth" required oninput="validateCard(this, 2)" value="" placeholder="Expiry Month">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="expiryYear" id="expiryYear" required oninput="validateCard(this, 4)" value="" placeholder="Expiry Year">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <input type="text" name="pinCode" id="pinCode" required oninput="validateCard(this, 3)" value="" placeholder="CVC">
+                                </div>
+                            </div>
+                            
+                            <h4 class="trailer-heading my-4">Payment</h4>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <p class="paymentInfo">Total Due Today: <span>$40.00 USD</span></p>
+                            </div>
+                            <h4 class="trailer-heading my-4">Additional Notes</h4>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <div class="comment-form__input-box">
+                                    <textarea name="additionalNotes" id="additionalNotes" placeholder="You can enter any additional notes or information you want included with your order here..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-submit">
+                                <button type="submit" class="thm-btn comment-form__btn">Checkout</button> 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="parent-footerDiv">
+                <div class="d-flex align-items-center justify-content-center footer-logo">
+                    <img class="h-90" src="assets/images/logo.png" alt="">
+                    <h3 class="text-white">SURE IPTV</h3>
+                </div>
+                <p class="text-center">1 Of The Best IPTV Service with 4K Premium channels, Movies, Sports, PPV Events, Kids Network, VOD and Much more.</p>
+            </div>
+            <div class="copyright-block">
+                <p>Sure IPTV &copy; All Rights Reserved - 2023</p>
+            </div>
+        </footer>
+    </div>
+    <script src="assets/js/dropdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+        function validatePhoneNumber(input) {
+            input.value = input.value.replace(/\D/g, '');
+        }
+        function validateCard(input, maxLength) {
+            input.value = input.value.replace(/\D/g, '');
+            if (input.value.length > maxLength) {
+                input.value = input.value.slice(0, maxLength);
+            }
+        }
+    </script>
+    <script>
+        const input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: callback => {
+            fetch("https://ipapi.co/json")
+            .then(res => res.json())
+            .then(data => callback(data.country_code))
+            .catch(() => callback("us"));
+        },
+        utilsScript: "/intl-tel-input/js/utils.js?1705750707383" // just for formatting/placeholders etc
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <title>DexOrdi</title>
+    <style type="text/css">
+        .styles-module_tooltip__mnnfp{
+            border-radius:3px;
+            font-size:90%;
+            left:0;
+            opacity:0;
+            padding:8px 16px;
+            pointer-events:none;
+            position:absolute;
+            top:0;
+            transition:opacity .3s ease-out;
+            visibility:hidden;
+            width:max-content;
+            will-change:opacity,visibility
+        }
+        .styles-module_fixed__7ciUi{
+            position:fixed
+        }
+        .styles-module_arrow__K0L3T{
+            background:inherit;
+            height:8px;
+            position:absolute;
+            transform:rotate(45deg);
+            width:8px
+        }
+        .styles-module_noArrow__T8y2L{
+            display:none
+        }
+        .styles-module_clickable__Bv9o7{
+            pointer-events:auto
+        }
+        .styles-module_show__2NboJ{
+            opacity:var(--rt-opacity);
+            visibility:visible
+        }
+        .styles-module_dark__xNqje{
+            background:var(--rt-color-dark);
+            color:var(--rt-color-white)
+        }
+        .styles-module_light__Z6W-X{
+            background-color:var(--rt-color-white);
+            color:var(--rt-color-dark)
+        }
+        .styles-module_success__A2AKt{
+            background-color:var(--rt-color-success);
+            color:var(--rt-color-white)
+        }
+        .styles-module_warning__SCK0X{
+            background-color:var(--rt-color-warning);
+            color:var(--rt-color-white)
+        }
+        .styles-module_error__JvumD{
+            background-color:var(--rt-color-error);
+            color:var(--rt-color-white)
+        }
+        .styles-module_info__BWdHW{
+            background-color:var(--rt-color-info);
+            color:var(--rt-color-white)
+        }
+    </style>
+    <style type="text/css">
+            @font-face {
+                font-weight: 400;
+                font-style:  normal;
+                font-family: circular;
+
+                src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+            }
+
+            @font-face {
+                font-weight: 700;
+                font-style:  normal;
+                font-family: circular;
+
+                src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body style="overflow: auto;" cz-shortcut-listen="true">
+    <main id="root">
+        <header class="header ">
+            <figure class="logo__container hide-desktop">
+              <img class="logoImage" src="assets/images/dexordi-light.a3106ba4.png" alt="logo">
+            </figure>
+            <button class="d-btn d-btn-profile hide-mobile">
+                <img src="data:image/png;base64,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">
+                <span class="hide-mobile-s">BTC Testnet</span>
+                <svg width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="7.274" y="14.93" width="1.798" height="10.187" rx=".899" transform="rotate(-135 7.274 14.93)" fill="#000"></rect>
+                  <rect x="6.003" y="1.794" width="1.798" height="10.187" rx=".899" transform="rotate(-45 6.003 1.794)" fill="#000"></rect>
+                </svg>
+            </button>
+            <button class="d-btn d-btn-outline d-btn-narrow hide-mobile">Connect wallet</button>
+            <button class="d-btn d-btn-primary d-btn-grey flex items-center gap-6 hide-desktop">
+              <svg viewBox="0 0 22 22" fill="inherit" xmlns="http://www.w3.org/2000/svg" class="icon">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60016 5.59992V4.24992C5.60016 2.01317 7.4134 0.199921 9.65015 0.199921H12.3502C14.5869 0.199921 16.4001 2.01317 16.4001 4.24992V5.59992H19.1001C20.5913 5.59992 21.8001 6.80875 21.8001 8.29992V13.1204C18.4382 14.3678 14.8002 15.0498 11.0002 15.0498C7.2001 15.0498 3.56215 14.3678 0.200161 13.1204V8.29992C0.200161 6.80875 1.40899 5.59992 2.90016 5.59992H5.60016ZM8.30015 4.24992C8.30015 3.50434 8.90457 2.89992 9.65015 2.89992H12.3502C13.0957 2.89992 13.7002 3.50434 13.7002 4.24992V5.59992H8.30015V4.24992ZM9.65015 10.9999C9.65015 10.2543 10.2546 9.64992 11.0002 9.64992H11.0137C11.7592 9.64992 12.3637 10.2543 12.3637 10.9999C12.3637 11.7455 11.7592 12.3499 11.0137 12.3499H11.0002C10.2546 12.3499 9.65015 11.7455 9.65015 10.9999Z" fill="inherit"></path>
+                <path d="M0.200161 15.9845V19.0999C0.200161 20.5911 1.40899 21.7999 2.90016 21.7999H19.1001C20.5913 21.7999 21.8001 20.5911 21.8001 19.0999V15.9845C18.4079 17.1295 14.7753 17.7498 11.0002 17.7498C7.22505 17.7498 3.59243 17.1295 0.200161 15.9845Z" fill="inherit"></path>
+              </svg>Connect </button>
+            <button class="d-btn d-btn-profile hide-desktop">
+              <img src="data:image/png;base64,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">
+              <span class="hide-mobile-s">BTC Testnet</span>
+              <svg width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="7.274" y="14.93" width="1.798" height="10.187" rx=".899" transform="rotate(-135 7.274 14.93)" fill="#000"></rect>
+                <rect x="6.003" y="1.794" width="1.798" height="10.187" rx=".899" transform="rotate(-45 6.003 1.794)" fill="#000"></rect>
+              </svg>
+            </button>
+            <button class="hide-desktop menu-btn">
+              <!-- Initially, show the old SVG -->
+                <svg viewBox="0 0 42 37" fill="inherit" xmlns="http://www.w3.org/2000/svg" class="icon-xl" id="oldSvg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 3.5C0 1.84315 1.34315 0.5 3 0.5H39C40.6569 0.5 42 1.84315 42 3.5C42 5.15685 40.6569 6.5 39 6.5H3C1.34315 6.5 0 5.15685 0 3.5Z" fill="inherit"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 18.5C0 16.8431 1.34315 15.5 3 15.5H39C40.6569 15.5 42 16.8431 42 18.5C42 20.1569 40.6569 21.5 39 21.5H3C1.34315 21.5 0 20.1569 0 18.5Z" fill="inherit"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18 33.5C18 31.8431 19.3431 30.5 21 30.5H39C40.6569 30.5 42 31.8431 42 33.5C42 35.1569 40.6569 36.5 39 36.5H21C19.3431 36.5 18 35.1569 18 33.5Z" fill="inherit"></path>
+                </svg>
+
+                <!-- Initially, hide the new SVG -->
+                <svg viewBox="0 0 36 37" fill="inherit" xmlns="http://www.w3.org/2000/svg" class="icon-xl d-none" id="newSvg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.87868 1.37868C2.05025 0.207107 3.94975 0.207107 5.12132 1.37868L18 14.2574L30.8787 1.37868C32.0503 0.207107 33.9497 0.207107 35.1213 1.37868C36.2929 2.55025 36.2929 4.44975 35.1213 5.62132L22.2426 18.5L35.1213 31.3787C36.2929 32.5503 36.2929 34.4497 35.1213 35.6213C33.9497 36.7929 32.0503 36.7929 30.8787 35.6213L18 22.7426L5.12132 35.6213C3.94975 36.7929 2.05025 36.7929 0.87868 35.6213C-0.292893 34.4497 -0.292893 32.5503 0.87868 31.3787L13.7574 18.5L0.87868 5.62132C-0.292893 4.44975 -0.292893 2.55025 0.87868 1.37868Z" fill="inheirt"></path>
+                </svg>
+            </button>
+            <section class="mobile__menu-container d-none">
+                <aside class="app__menu">
+                  <figure class="logo__container_aside hide-mobile">
+                    <img class="logoImage" src="assets/images/dexordi-dark.4043e409.png" alt="logo" width="110" height="110">
+                  </figure>
+                  <ul class="nav__list">
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor active" href="#" data-tab="dashboard" >
+                        <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.59198 1.88214C0.59198 1.07984 1.24237 0.429443 2.04468 0.429443H19.477C20.2793 0.429443 20.9297 1.07984 20.9297 1.88214V4.78753C20.9297 5.58983 20.2793 6.24023 19.477 6.24023H2.04468C1.24237 6.24023 0.59198 5.58983 0.59198 4.78753V1.88214Z"></path>
+                        <path d="M0.59198 10.5983C0.59198 9.79601 1.24237 9.14562 2.04468 9.14562H10.7609C11.5632 9.14562 12.2135 9.79601 12.2135 10.5983V19.3145C12.2135 20.1168 11.5632 20.7672 10.7609 20.7672H2.04468C1.24237 20.7672 0.59198 20.1168 0.59198 19.3145V10.5983Z"></path>
+                        <path d="M16.5716 9.14562C15.7693 9.14562 15.1189 9.79601 15.1189 10.5983V19.3145C15.1189 20.1168 15.7693 20.7672 16.5716 20.7672H19.477C20.2793 20.7672 20.9297 20.1168 20.9297 19.3145V10.5983C20.9297 9.79601 20.2793 9.14562 19.477 9.14562H16.5716Z"></path>
+                        </svg>Dashboard </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="swap">
+                        <svg width="56" height="64" viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.60001 0.800049C6.75392 0.800049 8.50001 2.54614 8.50001 4.70005V12.8949C13.4534 7.8391 20.358 4.70005 28 4.70005C39.8927 4.70005 49.9997 12.3024 53.7456 22.9004C54.4634 24.9312 53.399 27.1593 51.3682 27.8771C49.3374 28.5949 47.1092 27.5305 46.3914 25.4997C43.7126 17.9207 36.4843 12.5 28 12.5C21.6238 12.5 15.957 15.5616 12.3975 20.3H24.1C26.2539 20.3 28 22.0461 28 24.2C28 26.354 26.2539 28.1 24.1 28.1H4.60001C2.4461 28.1 0.700012 26.354 0.700012 24.2V4.70005C0.700012 2.54614 2.4461 0.800049 4.60001 0.800049ZM4.63186 36.123C6.66265 35.4052 8.89081 36.4696 9.60859 38.5004C12.2874 46.0794 19.5157 51.5 28 51.5C34.3762 51.5 40.0431 48.4385 43.6025 43.7001L31.9 43.7C29.7461 43.7 28 41.954 28 39.8C28 37.6461 29.7461 35.9 31.9 35.9H51.4C52.4344 35.9 53.4263 36.3109 54.1577 37.0423C54.8891 37.7737 55.3 38.7657 55.3 39.8V59.3C55.3 61.454 53.5539 63.2 51.4 63.2C49.2461 63.2 47.5 61.454 47.5 59.3V51.1052C42.5467 56.161 35.642 59.3 28 59.3C16.1073 59.3 6.00029 51.6977 2.25444 41.0997C1.53666 39.0689 2.60107 36.8408 4.63186 36.123Z"></path>
+                        </svg>Swap </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="liquidity">
+                        <svg width="64" height="72" viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.065 1.414C31.264 0.728863 32.7359 0.728863 33.9349 1.414L40.7599 5.314C42.63 6.38264 43.2798 8.76497 42.2111 10.6351C41.1425 12.5052 38.7602 13.1549 36.89 12.0863L32 9.29198L27.1099 12.0863C25.2398 13.1549 22.8575 12.5052 21.7888 10.6351C20.7202 8.76497 21.3699 6.38264 23.24 5.314L30.065 1.414Z"></path>
+                        <path d="M14.9111 14.5652C15.9798 16.4353 15.33 18.8177 13.4599 19.8863L12.5607 20.4001L13.4599 20.914C15.33 21.9826 15.9798 24.365 14.9111 26.2351C13.8425 28.1052 11.4602 28.7549 9.59004 27.6863L8.59999 27.1206V28.2001C8.59999 30.3541 6.8539 32.1001 4.69999 32.1001C2.54608 32.1001 0.799988 30.3541 0.799988 28.2001V20.4001C0.799988 19.4252 1.15773 18.5338 1.74911 17.8501C1.88425 17.6937 2.0323 17.5475 2.19224 17.4132C2.3894 17.2475 2.6032 17.101 2.83077 16.9764L9.59004 13.114C11.4602 12.0454 13.8425 12.6951 14.9111 14.5652Z"></path>
+                        <path d="M49.0888 14.5652C50.1575 12.6951 52.5398 12.0454 54.4099 13.114L61.1692 16.9764C61.3967 17.1009 61.6106 17.2475 61.8077 17.4132C62.659 18.1286 63.2 19.2012 63.2 20.4001V28.2001C63.2 30.3541 61.4539 32.1001 59.3 32.1001C57.1461 32.1001 55.4 30.3541 55.4 28.2001V27.1205L54.4099 27.6863C52.5398 28.7549 50.1575 28.1052 49.0888 26.2351C48.0202 24.365 48.6699 21.9826 50.54 20.914L51.4393 20.4001L50.54 19.8863C48.6699 18.8177 48.0202 16.4353 49.0888 14.5652Z"></path>
+                        <path d="M21.7888 30.1652C22.8575 28.2951 25.2398 27.6454 27.1099 28.714L32 31.5083L36.89 28.714C38.7602 27.6454 41.1425 28.2951 42.2111 30.1652C43.2798 32.0353 42.63 34.4177 40.7599 35.4863L35.9 38.2634V43.8002C35.9 45.9541 34.1539 47.7001 32 47.7001C29.8461 47.7001 28.1 45.9541 28.1 43.8002V38.2634L23.24 35.4863C21.3699 34.4177 20.7202 32.0353 21.7888 30.1652Z"></path>
+                        <path d="M4.69999 39.9002C6.8539 39.9002 8.59999 41.6462 8.59999 43.8002V49.3369L13.4599 52.114C15.33 53.1826 15.9798 55.565 14.9111 57.4351C13.8425 59.3052 11.4602 59.9549 9.59004 58.8863L2.76505 54.9863C1.5499 54.2919 0.799988 52.9997 0.799988 51.6002V43.8002C0.799988 41.6462 2.54608 39.9002 4.69999 39.9002Z"></path>
+                        <path d="M59.3 39.9002C61.4539 39.9002 63.2 41.6462 63.2 43.8002V51.6002C63.2 52.9997 62.4501 54.2919 61.2349 54.9863L54.4099 58.8863C52.5398 59.9549 50.1575 59.3052 49.0888 57.4351C48.0202 55.565 48.6699 53.1826 50.54 52.114L55.4 49.3369V43.8002C55.4 41.6462 57.1461 39.9002 59.3 39.9002Z"></path>
+                        <path d="M21.7888 61.3652C22.8575 59.4951 25.2398 58.8454 27.1099 59.914L28.1 60.4798V59.4002C28.1 57.2462 29.8461 55.5002 32 55.5002C34.1539 55.5002 35.9 57.2462 35.9 59.4002V60.4798L36.89 59.914C38.7602 58.8454 41.1425 59.4951 42.2111 61.3652C43.2798 63.2353 42.63 65.6177 40.7599 66.6863L33.9942 70.5524C33.4107 70.9003 32.7287 71.1002 32 71.1002C31.2713 71.1002 30.5893 70.9003 30.0058 70.5524L23.24 66.6863C21.3699 65.6177 20.7202 63.2353 21.7888 61.3652Z"></path>
+                        </svg>Liquidity </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="pool">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 12.5C12.5 6.03832 17.7382 0.800049 24.2 0.800049C27.1966 0.800049 29.93 1.92658 32 3.77924C34.0699 1.92658 36.8034 0.800049 39.8 0.800049C46.2617 0.800049 51.5 6.03832 51.5 12.5C51.5 13.8675 51.2654 15.1802 50.8342 16.4H55.3999C59.7078 16.4 63.1999 19.8922 63.1999 24.2C63.1999 28.5079 59.7078 32 55.3999 32H35.9V28.1C35.9 25.9461 34.1539 24.2 32 24.2C29.8461 24.2 28.1 25.9461 28.1 28.1V32H8.59998C4.29216 32 0.799988 28.5079 0.799988 24.2C0.799988 19.8922 4.29216 16.4 8.59998 16.4H13.1657C12.7346 15.1802 12.5 13.8675 12.5 12.5ZM28.1 16.4V12.5C28.1 10.3461 26.3539 8.60005 24.2 8.60005C22.0461 8.60005 20.3 10.3461 20.3 12.5C20.3 14.654 22.0461 16.4 24.2 16.4H28.1ZM39.8 16.4C41.9539 16.4 43.7 14.654 43.7 12.5C43.7 10.3461 41.9539 8.60005 39.8 8.60005C37.6461 8.60005 35.9 10.3461 35.9 12.5V16.4H39.8Z"></path>
+                        <path d="M28.1 35.9H4.69999V55.4C4.69999 59.7079 8.19216 63.2 12.5 63.2H28.1V35.9Z"></path>
+                        <path d="M35.9 63.2H51.5C55.8078 63.2 59.2999 59.7079 59.2999 55.4V35.9H35.9V63.2Z"></path>
+                        </svg>Pool </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="bridge">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M42.0846 10.8846C45.1306 7.83853 50.0693 7.83853 53.1154 10.8846C56.1615 13.9307 56.1615 18.8694 53.1154 21.9155L41.4154 33.6155C38.3693 36.6616 33.4306 36.6616 30.3845 33.6155C28.8615 32.0924 26.3922 32.0924 24.8691 33.6155C23.3461 35.1385 23.3461 37.6079 24.8691 39.1309C30.9613 45.2231 40.8387 45.2231 46.9308 39.1309L58.6308 27.4309C64.723 21.3387 64.723 11.4614 58.6308 5.36918C52.5387 -0.722996 42.6613 -0.722996 36.5691 5.36918L30.7191 11.2192C29.1961 12.7422 29.1961 15.2116 30.7191 16.7346C32.2422 18.2577 34.7115 18.2577 36.2345 16.7346L42.0846 10.8846Z"></path>
+                        <path d="M22.5846 30.3846C25.6307 27.3385 30.5694 27.3385 33.6155 30.3846C35.1385 31.9077 37.6079 31.9077 39.1309 30.3846C40.654 28.8616 40.654 26.3922 39.1309 24.8692C33.0387 18.777 23.1614 18.777 17.0692 24.8692L5.36918 36.5692C-0.722996 42.6614 -0.722996 52.5387 5.36918 58.6309C11.4614 64.7231 21.3387 64.7231 27.4309 58.6309L33.2809 52.7809C34.804 51.2579 34.804 48.7885 33.2809 47.2655C31.7579 45.7424 29.2885 45.7424 27.7655 47.2655L21.9155 53.1155C18.8694 56.1616 13.9307 56.1616 10.8846 53.1155C7.83853 50.0694 7.83853 45.1307 10.8846 42.0846L22.5846 30.3846Z"></path>
+                        </svg>Bridge </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="nft">
+                        <svg width="56" height="64" viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.2 12.5C18.0461 12.5 16.3 14.2461 16.3 16.4C16.3 18.5539 18.0461 20.3 20.2 20.3L41.9846 20.3L36.9423 25.3423C35.4192 26.8654 35.4192 29.3347 36.9423 30.8578C38.4653 32.3808 40.9347 32.3808 42.4577 30.8578L54.1577 19.1578C54.8891 18.4264 55.3 17.4344 55.3 16.4001C55.3 15.3657 54.8891 14.3737 54.1577 13.6423L42.4577 1.94233C40.9347 0.419288 38.4653 0.419287 36.9423 1.94233C35.4192 3.46538 35.4192 5.93472 36.9423 7.45776L41.9846 12.5L20.2 12.5Z"></path>
+                        <path d="M35.8 51.5C37.9539 51.5 39.7 49.754 39.7 47.6001C39.7 45.4461 37.9539 43.7001 35.8 43.7001L14.0154 43.7L19.0577 38.6578C20.5808 37.1347 20.5808 34.6654 19.0577 33.1423C17.5347 31.6193 15.0653 31.6193 13.5423 33.1423L1.84228 44.8423C1.11089 45.5737 0.699997 46.5657 0.699997 47.6C0.699997 48.6344 1.11089 49.6264 1.84228 50.3578L13.5423 62.0578C15.0653 63.5808 17.5347 63.5808 19.0577 62.0578C20.5808 60.5347 20.5808 58.0654 19.0577 56.5423L14.0154 51.5L35.8 51.5Z"></path>
+                        </svg>NFT </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="dao">
+                        <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.49737 0.49939C1.89277 0.49939 0.59198 1.80018 0.59198 3.40478V6.31017C0.59198 7.91478 1.89277 9.21556 3.49737 9.21556H6.40276C8.00737 9.21556 9.30816 7.91478 9.30816 6.31017V3.40478C9.30816 1.80018 8.00737 0.49939 6.40276 0.49939H3.49737Z"></path>
+                        <path d="M3.49737 12.121C1.89277 12.121 0.59198 13.4217 0.59198 15.0263V17.9317C0.59198 19.5363 1.89277 20.8371 3.49737 20.8371H6.40276C8.00737 20.8371 9.30816 19.5363 9.30816 17.9317V15.0263C9.30816 13.4217 8.00737 12.121 6.40276 12.121H3.49737Z"></path>
+                        <path d="M12.2135 3.40478C12.2135 1.80018 13.5143 0.49939 15.1189 0.49939H18.0243C19.6289 0.49939 20.9297 1.80018 20.9297 3.40478V6.31017C20.9297 7.91478 19.6289 9.21556 18.0243 9.21556H15.1189C13.5143 9.21556 12.2135 7.91478 12.2135 6.31017V3.40478Z"></path>
+                        <path d="M12.2135 15.0263C12.2135 13.4217 13.5143 12.121 15.1189 12.121H18.0243C19.6289 12.121 20.9297 13.4217 20.9297 15.0263V17.9317C20.9297 19.5363 19.6289 20.8371 18.0243 20.8371H15.1189C13.5143 20.8371 12.2135 19.5363 12.2135 17.9317V15.0263Z"></path>
+                        </svg>DAO </a>
+                    </li>
+                    <li>
+                    <button class="d-btn d-btn-primary noeffect">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M42.0846 10.8846C45.1306 7.83853 50.0693 7.83853 53.1154 10.8846C56.1615 13.9307 56.1615 18.8694 53.1154 21.9155L41.4154 33.6155C38.3693 36.6616 33.4306 36.6616 30.3845 33.6155C28.8615 32.0924 26.3922 32.0924 24.8691 33.6155C23.3461 35.1385 23.3461 37.6079 24.8691 39.1309C30.9613 45.2231 40.8387 45.2231 46.9308 39.1309L58.6308 27.4309C64.723 21.3387 64.723 11.4614 58.6308 5.36918C52.5387 -0.722996 42.6613 -0.722996 36.5691 5.36918L30.7191 11.2192C29.1961 12.7422 29.1961 15.2116 30.7191 16.7346C32.2422 18.2577 34.7115 18.2577 36.2345 16.7346L42.0846 10.8846Z"></path>
+                        <path d="M22.5846 30.3846C25.6307 27.3385 30.5694 27.3385 33.6155 30.3846C35.1385 31.9077 37.6079 31.9077 39.1309 30.3846C40.654 28.8616 40.654 26.3922 39.1309 24.8692C33.0387 18.777 23.1614 18.777 17.0692 24.8692L5.36918 36.5692C-0.722996 42.6614 -0.722996 52.5387 5.36918 58.6309C11.4614 64.7231 21.3387 64.7231 27.4309 58.6309L33.2809 52.7809C34.804 51.2579 34.804 48.7885 33.2809 47.2655C31.7579 45.7424 29.2885 45.7424 27.7655 47.2655L21.9155 53.1155C18.8694 56.1616 13.9307 56.1616 10.8846 53.1155C7.83853 50.0694 7.83853 45.1307 10.8846 42.0846L22.5846 30.3846Z"></path>
+                        </svg>More </button>
+                    <ul>
+                        <li>
+                        <a href="#">Doc</a>
+                        </li>
+                        <li>
+                        <a href="#">Vote</a>
+                        </li>
+                        <li>
+                        <a href="#">Github</a>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                <footer>
+                    <p>Connect</p>
+                    <ul>
+                    <li>
+                        <a href="https://twitter.com/dexordi" target="_blank">
+                        <img src="assets/images/twitter.b842c12e.svg" alt="twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/dexordi" target="_blank">
+                        <img src="assets/images/telegram.9f2d0aec.svg" alt="telegram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://medium.com/@dexordi" target="_blank">
+                        <img src="assets/images/Medium.382a3d2c.svg" alt="medium">
+                        </a>
+                    </li>
+                    </ul>
+                    <div class="switch-theme" onclick="toggleTheme()" >
+                        <img class="switch-themeImage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAYAAAADgWq5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQCSURBVHgBzVm/S+RAFH7JLmqh3JYK/oiFxXW7grAWagSLQwvvELS8FUuLu9JuPdD6FPwDXLA5Qc5rtLxVhFsQdK+2uIiiVrKiwlqo974wCdkf2UzWTfSDbCaTmc2XL2/evHmj0AuRTCZ1VVVHnp+f43yJIyYOE4qi5PlegYt5Pvaam5uzjALVCYXqAEgykUkuppzkpB+qKOtPT0+ZXC6XJZ/wRVgQTXNRp8bAYPW/MfF12Q5ShHVdjz08PIDoVwoAQnEQNzzbejVgVTX+w99c1ChYQO1ZLzOJ1Lo5MDAQj0Qif7jYTsEjxsKkurq6bs7Pz3NujVwJg2w0GoWyvgfVC/Ghu7ubzs7O9qrdrEoYZiCUDZusBb2np8dg0n/Lb1TYcIg264UC23SifCCqVRrCG2j0+ojxhPSzvLLEJFjdFKu7SG8H7Z2dnQoPwqxVUaKwmBSk0d/fT5lMhoIEc/qCecC6tglDXfJhCnNzc7S2tkZXV1cUMGLFYtGesGzC/CafJf/AJIsDODo6oqABla2ySRiegSTjg/HxcZsscHFxQSEghjgGBUthXaZXR0dHCVng7u6OwgCr/BFnVVxMynQaHh42STtRfh0gTI6WwppMj+np6Yq6trY2CgkavIVFOO7Vuq+vr6qaqA8L9/f3mioGnCcSiUTVephJa2srhQGOb+JQWJNp7PbpQXZiYoLCgkoNADxHWCpzfKFKrWBvb29d74FsubsLCiqvpaQIe/nbmZmZMEgbqog3PUnv7+97NSmZsoPA4+NjwbJhw6sxFJaJG0B4a2srkAnl8PAwb8bDvPB7z6ekV4fLy0spjwCPAhNB+Gnh+vq6pA3899jYGDU1NclGfFmOizNRlHgpsu2MiNxwfHxsquwkUgvw3U7/jRcGLPVxPTU1RZL4hR/TJFpaWpD3khp8y8vL9oP9AkSdprKwsCDdF6LibBIWyTmppQPI4kG13JwMlpaW6OTkRLZ51lqM2hMHv8GKbG88KJVK1aU0XnR+fp52dnak+zA3W0x7EcoGXeAFXy/bsmcgBMBrbG5ummV8Zq+oDUQ3NjYonU7T6ekp+YDB6s5aFyV5CZH0+0c+EyggOzQ0ZMfLzmkaXwMDdXd3ty4zYnV7nbmJikTK4OAgFnzf6Q1ApGIXnXUVqSok4vyYRoCAKXwqr6warbGbg8p5ej0g9Tpa7YZrfljYM3JsYSttknVLbrvGw/DNvIGCt9ymkCA2cEZrZeJrJrQNwyiyTf9AfouhU7BYZYFmDw4OagYW0psyAaZhpbYKLPje9hIZzkakZJH/XeUBvuJn366ufTpApI5AfoTkyRe4/Xa9e3RA3YSdEOYSZyIarxFRfod6VvBG7IIa5AhgXoL/0PGXxw53thgAAAAASUVORK5CYII=" alt="dark theme">
+                    </div>
+                </footer>
+                </aside>
+              </section>
+          </header>
+        <main class="main__container">
+            <aside class="app__menu">
+                <figure class="logo__container_aside hide-mobile">
+                    <img class="logoImage" src="assets/images/dexordi-light.a3106ba4.png" alt="logo" width="110" height="110">
+                </figure>
+                <ul class="nav__list">
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor active" href="#" data-tab="dashboard" >
+                        <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.59198 1.88214C0.59198 1.07984 1.24237 0.429443 2.04468 0.429443H19.477C20.2793 0.429443 20.9297 1.07984 20.9297 1.88214V4.78753C20.9297 5.58983 20.2793 6.24023 19.477 6.24023H2.04468C1.24237 6.24023 0.59198 5.58983 0.59198 4.78753V1.88214Z"></path>
+                        <path d="M0.59198 10.5983C0.59198 9.79601 1.24237 9.14562 2.04468 9.14562H10.7609C11.5632 9.14562 12.2135 9.79601 12.2135 10.5983V19.3145C12.2135 20.1168 11.5632 20.7672 10.7609 20.7672H2.04468C1.24237 20.7672 0.59198 20.1168 0.59198 19.3145V10.5983Z"></path>
+                        <path d="M16.5716 9.14562C15.7693 9.14562 15.1189 9.79601 15.1189 10.5983V19.3145C15.1189 20.1168 15.7693 20.7672 16.5716 20.7672H19.477C20.2793 20.7672 20.9297 20.1168 20.9297 19.3145V10.5983C20.9297 9.79601 20.2793 9.14562 19.477 9.14562H16.5716Z"></path>
+                        </svg>Dashboard </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="swap">
+                        <svg width="56" height="64" viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.60001 0.800049C6.75392 0.800049 8.50001 2.54614 8.50001 4.70005V12.8949C13.4534 7.8391 20.358 4.70005 28 4.70005C39.8927 4.70005 49.9997 12.3024 53.7456 22.9004C54.4634 24.9312 53.399 27.1593 51.3682 27.8771C49.3374 28.5949 47.1092 27.5305 46.3914 25.4997C43.7126 17.9207 36.4843 12.5 28 12.5C21.6238 12.5 15.957 15.5616 12.3975 20.3H24.1C26.2539 20.3 28 22.0461 28 24.2C28 26.354 26.2539 28.1 24.1 28.1H4.60001C2.4461 28.1 0.700012 26.354 0.700012 24.2V4.70005C0.700012 2.54614 2.4461 0.800049 4.60001 0.800049ZM4.63186 36.123C6.66265 35.4052 8.89081 36.4696 9.60859 38.5004C12.2874 46.0794 19.5157 51.5 28 51.5C34.3762 51.5 40.0431 48.4385 43.6025 43.7001L31.9 43.7C29.7461 43.7 28 41.954 28 39.8C28 37.6461 29.7461 35.9 31.9 35.9H51.4C52.4344 35.9 53.4263 36.3109 54.1577 37.0423C54.8891 37.7737 55.3 38.7657 55.3 39.8V59.3C55.3 61.454 53.5539 63.2 51.4 63.2C49.2461 63.2 47.5 61.454 47.5 59.3V51.1052C42.5467 56.161 35.642 59.3 28 59.3C16.1073 59.3 6.00029 51.6977 2.25444 41.0997C1.53666 39.0689 2.60107 36.8408 4.63186 36.123Z"></path>
+                        </svg>Swap </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="liquidity">
+                        <svg width="64" height="72" viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.065 1.414C31.264 0.728863 32.7359 0.728863 33.9349 1.414L40.7599 5.314C42.63 6.38264 43.2798 8.76497 42.2111 10.6351C41.1425 12.5052 38.7602 13.1549 36.89 12.0863L32 9.29198L27.1099 12.0863C25.2398 13.1549 22.8575 12.5052 21.7888 10.6351C20.7202 8.76497 21.3699 6.38264 23.24 5.314L30.065 1.414Z"></path>
+                        <path d="M14.9111 14.5652C15.9798 16.4353 15.33 18.8177 13.4599 19.8863L12.5607 20.4001L13.4599 20.914C15.33 21.9826 15.9798 24.365 14.9111 26.2351C13.8425 28.1052 11.4602 28.7549 9.59004 27.6863L8.59999 27.1206V28.2001C8.59999 30.3541 6.8539 32.1001 4.69999 32.1001C2.54608 32.1001 0.799988 30.3541 0.799988 28.2001V20.4001C0.799988 19.4252 1.15773 18.5338 1.74911 17.8501C1.88425 17.6937 2.0323 17.5475 2.19224 17.4132C2.3894 17.2475 2.6032 17.101 2.83077 16.9764L9.59004 13.114C11.4602 12.0454 13.8425 12.6951 14.9111 14.5652Z"></path>
+                        <path d="M49.0888 14.5652C50.1575 12.6951 52.5398 12.0454 54.4099 13.114L61.1692 16.9764C61.3967 17.1009 61.6106 17.2475 61.8077 17.4132C62.659 18.1286 63.2 19.2012 63.2 20.4001V28.2001C63.2 30.3541 61.4539 32.1001 59.3 32.1001C57.1461 32.1001 55.4 30.3541 55.4 28.2001V27.1205L54.4099 27.6863C52.5398 28.7549 50.1575 28.1052 49.0888 26.2351C48.0202 24.365 48.6699 21.9826 50.54 20.914L51.4393 20.4001L50.54 19.8863C48.6699 18.8177 48.0202 16.4353 49.0888 14.5652Z"></path>
+                        <path d="M21.7888 30.1652C22.8575 28.2951 25.2398 27.6454 27.1099 28.714L32 31.5083L36.89 28.714C38.7602 27.6454 41.1425 28.2951 42.2111 30.1652C43.2798 32.0353 42.63 34.4177 40.7599 35.4863L35.9 38.2634V43.8002C35.9 45.9541 34.1539 47.7001 32 47.7001C29.8461 47.7001 28.1 45.9541 28.1 43.8002V38.2634L23.24 35.4863C21.3699 34.4177 20.7202 32.0353 21.7888 30.1652Z"></path>
+                        <path d="M4.69999 39.9002C6.8539 39.9002 8.59999 41.6462 8.59999 43.8002V49.3369L13.4599 52.114C15.33 53.1826 15.9798 55.565 14.9111 57.4351C13.8425 59.3052 11.4602 59.9549 9.59004 58.8863L2.76505 54.9863C1.5499 54.2919 0.799988 52.9997 0.799988 51.6002V43.8002C0.799988 41.6462 2.54608 39.9002 4.69999 39.9002Z"></path>
+                        <path d="M59.3 39.9002C61.4539 39.9002 63.2 41.6462 63.2 43.8002V51.6002C63.2 52.9997 62.4501 54.2919 61.2349 54.9863L54.4099 58.8863C52.5398 59.9549 50.1575 59.3052 49.0888 57.4351C48.0202 55.565 48.6699 53.1826 50.54 52.114L55.4 49.3369V43.8002C55.4 41.6462 57.1461 39.9002 59.3 39.9002Z"></path>
+                        <path d="M21.7888 61.3652C22.8575 59.4951 25.2398 58.8454 27.1099 59.914L28.1 60.4798V59.4002C28.1 57.2462 29.8461 55.5002 32 55.5002C34.1539 55.5002 35.9 57.2462 35.9 59.4002V60.4798L36.89 59.914C38.7602 58.8454 41.1425 59.4951 42.2111 61.3652C43.2798 63.2353 42.63 65.6177 40.7599 66.6863L33.9942 70.5524C33.4107 70.9003 32.7287 71.1002 32 71.1002C31.2713 71.1002 30.5893 70.9003 30.0058 70.5524L23.24 66.6863C21.3699 65.6177 20.7202 63.2353 21.7888 61.3652Z"></path>
+                        </svg>Liquidity </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="pool">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 12.5C12.5 6.03832 17.7382 0.800049 24.2 0.800049C27.1966 0.800049 29.93 1.92658 32 3.77924C34.0699 1.92658 36.8034 0.800049 39.8 0.800049C46.2617 0.800049 51.5 6.03832 51.5 12.5C51.5 13.8675 51.2654 15.1802 50.8342 16.4H55.3999C59.7078 16.4 63.1999 19.8922 63.1999 24.2C63.1999 28.5079 59.7078 32 55.3999 32H35.9V28.1C35.9 25.9461 34.1539 24.2 32 24.2C29.8461 24.2 28.1 25.9461 28.1 28.1V32H8.59998C4.29216 32 0.799988 28.5079 0.799988 24.2C0.799988 19.8922 4.29216 16.4 8.59998 16.4H13.1657C12.7346 15.1802 12.5 13.8675 12.5 12.5ZM28.1 16.4V12.5C28.1 10.3461 26.3539 8.60005 24.2 8.60005C22.0461 8.60005 20.3 10.3461 20.3 12.5C20.3 14.654 22.0461 16.4 24.2 16.4H28.1ZM39.8 16.4C41.9539 16.4 43.7 14.654 43.7 12.5C43.7 10.3461 41.9539 8.60005 39.8 8.60005C37.6461 8.60005 35.9 10.3461 35.9 12.5V16.4H39.8Z"></path>
+                        <path d="M28.1 35.9H4.69999V55.4C4.69999 59.7079 8.19216 63.2 12.5 63.2H28.1V35.9Z"></path>
+                        <path d="M35.9 63.2H51.5C55.8078 63.2 59.2999 59.7079 59.2999 55.4V35.9H35.9V63.2Z"></path>
+                        </svg>Pool </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="bridge">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M42.0846 10.8846C45.1306 7.83853 50.0693 7.83853 53.1154 10.8846C56.1615 13.9307 56.1615 18.8694 53.1154 21.9155L41.4154 33.6155C38.3693 36.6616 33.4306 36.6616 30.3845 33.6155C28.8615 32.0924 26.3922 32.0924 24.8691 33.6155C23.3461 35.1385 23.3461 37.6079 24.8691 39.1309C30.9613 45.2231 40.8387 45.2231 46.9308 39.1309L58.6308 27.4309C64.723 21.3387 64.723 11.4614 58.6308 5.36918C52.5387 -0.722996 42.6613 -0.722996 36.5691 5.36918L30.7191 11.2192C29.1961 12.7422 29.1961 15.2116 30.7191 16.7346C32.2422 18.2577 34.7115 18.2577 36.2345 16.7346L42.0846 10.8846Z"></path>
+                        <path d="M22.5846 30.3846C25.6307 27.3385 30.5694 27.3385 33.6155 30.3846C35.1385 31.9077 37.6079 31.9077 39.1309 30.3846C40.654 28.8616 40.654 26.3922 39.1309 24.8692C33.0387 18.777 23.1614 18.777 17.0692 24.8692L5.36918 36.5692C-0.722996 42.6614 -0.722996 52.5387 5.36918 58.6309C11.4614 64.7231 21.3387 64.7231 27.4309 58.6309L33.2809 52.7809C34.804 51.2579 34.804 48.7885 33.2809 47.2655C31.7579 45.7424 29.2885 45.7424 27.7655 47.2655L21.9155 53.1155C18.8694 56.1616 13.9307 56.1616 10.8846 53.1155C7.83853 50.0694 7.83853 45.1307 10.8846 42.0846L22.5846 30.3846Z"></path>
+                        </svg>Bridge </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="nft">
+                        <svg width="56" height="64" viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.2 12.5C18.0461 12.5 16.3 14.2461 16.3 16.4C16.3 18.5539 18.0461 20.3 20.2 20.3L41.9846 20.3L36.9423 25.3423C35.4192 26.8654 35.4192 29.3347 36.9423 30.8578C38.4653 32.3808 40.9347 32.3808 42.4577 30.8578L54.1577 19.1578C54.8891 18.4264 55.3 17.4344 55.3 16.4001C55.3 15.3657 54.8891 14.3737 54.1577 13.6423L42.4577 1.94233C40.9347 0.419288 38.4653 0.419287 36.9423 1.94233C35.4192 3.46538 35.4192 5.93472 36.9423 7.45776L41.9846 12.5L20.2 12.5Z"></path>
+                        <path d="M35.8 51.5C37.9539 51.5 39.7 49.754 39.7 47.6001C39.7 45.4461 37.9539 43.7001 35.8 43.7001L14.0154 43.7L19.0577 38.6578C20.5808 37.1347 20.5808 34.6654 19.0577 33.1423C17.5347 31.6193 15.0653 31.6193 13.5423 33.1423L1.84228 44.8423C1.11089 45.5737 0.699997 46.5657 0.699997 47.6C0.699997 48.6344 1.11089 49.6264 1.84228 50.3578L13.5423 62.0578C15.0653 63.5808 17.5347 63.5808 19.0577 62.0578C20.5808 60.5347 20.5808 58.0654 19.0577 56.5423L14.0154 51.5L35.8 51.5Z"></path>
+                        </svg>NFT </a>
+                    </li>
+                    <li>
+                    <a class="d-btn d-btn-primary minMainAnchor" href="#" data-tab="dao">
+                        <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.49737 0.49939C1.89277 0.49939 0.59198 1.80018 0.59198 3.40478V6.31017C0.59198 7.91478 1.89277 9.21556 3.49737 9.21556H6.40276C8.00737 9.21556 9.30816 7.91478 9.30816 6.31017V3.40478C9.30816 1.80018 8.00737 0.49939 6.40276 0.49939H3.49737Z"></path>
+                        <path d="M3.49737 12.121C1.89277 12.121 0.59198 13.4217 0.59198 15.0263V17.9317C0.59198 19.5363 1.89277 20.8371 3.49737 20.8371H6.40276C8.00737 20.8371 9.30816 19.5363 9.30816 17.9317V15.0263C9.30816 13.4217 8.00737 12.121 6.40276 12.121H3.49737Z"></path>
+                        <path d="M12.2135 3.40478C12.2135 1.80018 13.5143 0.49939 15.1189 0.49939H18.0243C19.6289 0.49939 20.9297 1.80018 20.9297 3.40478V6.31017C20.9297 7.91478 19.6289 9.21556 18.0243 9.21556H15.1189C13.5143 9.21556 12.2135 7.91478 12.2135 6.31017V3.40478Z"></path>
+                        <path d="M12.2135 15.0263C12.2135 13.4217 13.5143 12.121 15.1189 12.121H18.0243C19.6289 12.121 20.9297 13.4217 20.9297 15.0263V17.9317C20.9297 19.5363 19.6289 20.8371 18.0243 20.8371H15.1189C13.5143 20.8371 12.2135 19.5363 12.2135 17.9317V15.0263Z"></path>
+                        </svg>DAO </a>
+                    </li>
+                    <li>
+                    <button class="d-btn d-btn-primary noeffect">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M42.0846 10.8846C45.1306 7.83853 50.0693 7.83853 53.1154 10.8846C56.1615 13.9307 56.1615 18.8694 53.1154 21.9155L41.4154 33.6155C38.3693 36.6616 33.4306 36.6616 30.3845 33.6155C28.8615 32.0924 26.3922 32.0924 24.8691 33.6155C23.3461 35.1385 23.3461 37.6079 24.8691 39.1309C30.9613 45.2231 40.8387 45.2231 46.9308 39.1309L58.6308 27.4309C64.723 21.3387 64.723 11.4614 58.6308 5.36918C52.5387 -0.722996 42.6613 -0.722996 36.5691 5.36918L30.7191 11.2192C29.1961 12.7422 29.1961 15.2116 30.7191 16.7346C32.2422 18.2577 34.7115 18.2577 36.2345 16.7346L42.0846 10.8846Z"></path>
+                        <path d="M22.5846 30.3846C25.6307 27.3385 30.5694 27.3385 33.6155 30.3846C35.1385 31.9077 37.6079 31.9077 39.1309 30.3846C40.654 28.8616 40.654 26.3922 39.1309 24.8692C33.0387 18.777 23.1614 18.777 17.0692 24.8692L5.36918 36.5692C-0.722996 42.6614 -0.722996 52.5387 5.36918 58.6309C11.4614 64.7231 21.3387 64.7231 27.4309 58.6309L33.2809 52.7809C34.804 51.2579 34.804 48.7885 33.2809 47.2655C31.7579 45.7424 29.2885 45.7424 27.7655 47.2655L21.9155 53.1155C18.8694 56.1616 13.9307 56.1616 10.8846 53.1155C7.83853 50.0694 7.83853 45.1307 10.8846 42.0846L22.5846 30.3846Z"></path>
+                        </svg>More </button>
+                    <ul>
+                        <li>
+                        <a href="#">Doc</a>
+                        </li>
+                        <li>
+                        <a href="#">Vote</a>
+                        </li>
+                        <li>
+                        <a href="#">Github</a>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                <footer>
+                    <p>Connect</p>
+                    <ul>
+                    <li>
+                        <a href="https://twitter.com/dexordi" target="_blank">
+                        <img src="assets/images/twitter.b842c12e.svg" alt="twitter">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/dexordi" target="_blank">
+                        <img src="assets/images/telegram.9f2d0aec.svg" alt="telegram">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://medium.com/@dexordi" target="_blank">
+                        <img src="assets/images/Medium.382a3d2c.svg" alt="medium">
+                        </a>
+                    </li>
+                    </ul>
+                    <div class="switch-theme" onclick="toggleTheme()" >
+                        <img class="switch-themeImage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAArCAYAAAADgWq5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQCSURBVHgBzVm/S+RAFH7JLmqh3JYK/oiFxXW7grAWagSLQwvvELS8FUuLu9JuPdD6FPwDXLA5Qc5rtLxVhFsQdK+2uIiiVrKiwlqo974wCdkf2UzWTfSDbCaTmc2XL2/evHmj0AuRTCZ1VVVHnp+f43yJIyYOE4qi5PlegYt5Pvaam5uzjALVCYXqAEgykUkuppzkpB+qKOtPT0+ZXC6XJZ/wRVgQTXNRp8bAYPW/MfF12Q5ShHVdjz08PIDoVwoAQnEQNzzbejVgVTX+w99c1ChYQO1ZLzOJ1Lo5MDAQj0Qif7jYTsEjxsKkurq6bs7Pz3NujVwJg2w0GoWyvgfVC/Ghu7ubzs7O9qrdrEoYZiCUDZusBb2np8dg0n/Lb1TYcIg264UC23SifCCqVRrCG2j0+ojxhPSzvLLEJFjdFKu7SG8H7Z2dnQoPwqxVUaKwmBSk0d/fT5lMhoIEc/qCecC6tglDXfJhCnNzc7S2tkZXV1cUMGLFYtGesGzC/CafJf/AJIsDODo6oqABla2ySRiegSTjg/HxcZsscHFxQSEghjgGBUthXaZXR0dHCVng7u6OwgCr/BFnVVxMynQaHh42STtRfh0gTI6WwppMj+np6Yq6trY2CgkavIVFOO7Vuq+vr6qaqA8L9/f3mioGnCcSiUTVephJa2srhQGOb+JQWJNp7PbpQXZiYoLCgkoNADxHWCpzfKFKrWBvb29d74FsubsLCiqvpaQIe/nbmZmZMEgbqog3PUnv7+97NSmZsoPA4+NjwbJhw6sxFJaJG0B4a2srkAnl8PAwb8bDvPB7z6ekV4fLy0spjwCPAhNB+Gnh+vq6pA3899jYGDU1NclGfFmOizNRlHgpsu2MiNxwfHxsquwkUgvw3U7/jRcGLPVxPTU1RZL4hR/TJFpaWpD3khp8y8vL9oP9AkSdprKwsCDdF6LibBIWyTmppQPI4kG13JwMlpaW6OTkRLZ51lqM2hMHv8GKbG88KJVK1aU0XnR+fp52dnak+zA3W0x7EcoGXeAFXy/bsmcgBMBrbG5ummV8Zq+oDUQ3NjYonU7T6ekp+YDB6s5aFyV5CZH0+0c+EyggOzQ0ZMfLzmkaXwMDdXd3ty4zYnV7nbmJikTK4OAgFnzf6Q1ApGIXnXUVqSok4vyYRoCAKXwqr6warbGbg8p5ej0g9Tpa7YZrfljYM3JsYSttknVLbrvGw/DNvIGCt9ymkCA2cEZrZeJrJrQNwyiyTf9AfouhU7BYZYFmDw4OagYW0psyAaZhpbYKLPje9hIZzkakZJH/XeUBvuJn366ufTpApI5AfoTkyRe4/Xa9e3RA3YSdEOYSZyIarxFRfod6VvBG7IIa5AhgXoL/0PGXxw53thgAAAAASUVORK5CYII=" alt="dark theme">
+                    </div>
+                </footer>
+            </aside>
+            <section class="main__content glass-effect">
+                <div class="Toastify"></div>
+                <section id="dashboard" class="dashboard__container tabContent ">
+                    <h1>DexOrdi</h1>
+                    <p>The 1st AMM Dex &amp; DAO based on brc-20 token standard</p>
+                    <section class="cards__container">
+                    <a class="minMainAnchor card glass-effect" href="#" data-tab="swap" >
+                        <svg width="56" height="64" viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.60001 0.800049C6.75392 0.800049 8.50001 2.54614 8.50001 4.70005V12.8949C13.4534 7.8391 20.358 4.70005 28 4.70005C39.8927 4.70005 49.9997 12.3024 53.7456 22.9004C54.4634 24.9312 53.399 27.1593 51.3682 27.8771C49.3374 28.5949 47.1092 27.5305 46.3914 25.4997C43.7126 17.9207 36.4843 12.5 28 12.5C21.6238 12.5 15.957 15.5616 12.3975 20.3H24.1C26.2539 20.3 28 22.0461 28 24.2C28 26.354 26.2539 28.1 24.1 28.1H4.60001C2.4461 28.1 0.700012 26.354 0.700012 24.2V4.70005C0.700012 2.54614 2.4461 0.800049 4.60001 0.800049ZM4.63186 36.123C6.66265 35.4052 8.89081 36.4696 9.60859 38.5004C12.2874 46.0794 19.5157 51.5 28 51.5C34.3762 51.5 40.0431 48.4385 43.6025 43.7001L31.9 43.7C29.7461 43.7 28 41.954 28 39.8C28 37.6461 29.7461 35.9 31.9 35.9H51.4C52.4344 35.9 53.4263 36.3109 54.1577 37.0423C54.8891 37.7737 55.3 38.7657 55.3 39.8V59.3C55.3 61.454 53.5539 63.2 51.4 63.2C49.2461 63.2 47.5 61.454 47.5 59.3V51.1052C42.5467 56.161 35.642 59.3 28 59.3C16.1073 59.3 6.00029 51.6977 2.25444 41.0997C1.53666 39.0689 2.60107 36.8408 4.63186 36.123Z"></path>
+                        </svg>
+                        <h3>Swap</h3>
+                    </a>
+                    <a class="minMainAnchor card glass-effect" href="#" data-tab="liquidity">
+                        <svg width="64" height="72" viewBox="0 0 64 72" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30.065 1.414C31.264 0.728863 32.7359 0.728863 33.9349 1.414L40.7599 5.314C42.63 6.38264 43.2798 8.76497 42.2111 10.6351C41.1425 12.5052 38.7602 13.1549 36.89 12.0863L32 9.29198L27.1099 12.0863C25.2398 13.1549 22.8575 12.5052 21.7888 10.6351C20.7202 8.76497 21.3699 6.38264 23.24 5.314L30.065 1.414Z"></path>
+                        <path d="M14.9111 14.5652C15.9798 16.4353 15.33 18.8177 13.4599 19.8863L12.5607 20.4001L13.4599 20.914C15.33 21.9826 15.9798 24.365 14.9111 26.2351C13.8425 28.1052 11.4602 28.7549 9.59004 27.6863L8.59999 27.1206V28.2001C8.59999 30.3541 6.8539 32.1001 4.69999 32.1001C2.54608 32.1001 0.799988 30.3541 0.799988 28.2001V20.4001C0.799988 19.4252 1.15773 18.5338 1.74911 17.8501C1.88425 17.6937 2.0323 17.5475 2.19224 17.4132C2.3894 17.2475 2.6032 17.101 2.83077 16.9764L9.59004 13.114C11.4602 12.0454 13.8425 12.6951 14.9111 14.5652Z"></path>
+                        <path d="M49.0888 14.5652C50.1575 12.6951 52.5398 12.0454 54.4099 13.114L61.1692 16.9764C61.3967 17.1009 61.6106 17.2475 61.8077 17.4132C62.659 18.1286 63.2 19.2012 63.2 20.4001V28.2001C63.2 30.3541 61.4539 32.1001 59.3 32.1001C57.1461 32.1001 55.4 30.3541 55.4 28.2001V27.1205L54.4099 27.6863C52.5398 28.7549 50.1575 28.1052 49.0888 26.2351C48.0202 24.365 48.6699 21.9826 50.54 20.914L51.4393 20.4001L50.54 19.8863C48.6699 18.8177 48.0202 16.4353 49.0888 14.5652Z"></path>
+                        <path d="M21.7888 30.1652C22.8575 28.2951 25.2398 27.6454 27.1099 28.714L32 31.5083L36.89 28.714C38.7602 27.6454 41.1425 28.2951 42.2111 30.1652C43.2798 32.0353 42.63 34.4177 40.7599 35.4863L35.9 38.2634V43.8002C35.9 45.9541 34.1539 47.7001 32 47.7001C29.8461 47.7001 28.1 45.9541 28.1 43.8002V38.2634L23.24 35.4863C21.3699 34.4177 20.7202 32.0353 21.7888 30.1652Z"></path>
+                        <path d="M4.69999 39.9002C6.8539 39.9002 8.59999 41.6462 8.59999 43.8002V49.3369L13.4599 52.114C15.33 53.1826 15.9798 55.565 14.9111 57.4351C13.8425 59.3052 11.4602 59.9549 9.59004 58.8863L2.76505 54.9863C1.5499 54.2919 0.799988 52.9997 0.799988 51.6002V43.8002C0.799988 41.6462 2.54608 39.9002 4.69999 39.9002Z"></path>
+                        <path d="M59.3 39.9002C61.4539 39.9002 63.2 41.6462 63.2 43.8002V51.6002C63.2 52.9997 62.4501 54.2919 61.2349 54.9863L54.4099 58.8863C52.5398 59.9549 50.1575 59.3052 49.0888 57.4351C48.0202 55.565 48.6699 53.1826 50.54 52.114L55.4 49.3369V43.8002C55.4 41.6462 57.1461 39.9002 59.3 39.9002Z"></path>
+                        <path d="M21.7888 61.3652C22.8575 59.4951 25.2398 58.8454 27.1099 59.914L28.1 60.4798V59.4002C28.1 57.2462 29.8461 55.5002 32 55.5002C34.1539 55.5002 35.9 57.2462 35.9 59.4002V60.4798L36.89 59.914C38.7602 58.8454 41.1425 59.4951 42.2111 61.3652C43.2798 63.2353 42.63 65.6177 40.7599 66.6863L33.9942 70.5524C33.4107 70.9003 32.7287 71.1002 32 71.1002C31.2713 71.1002 30.5893 70.9003 30.0058 70.5524L23.24 66.6863C21.3699 65.6177 20.7202 63.2353 21.7888 61.3652Z"></path>
+                        </svg>
+                        <h3>Liquidity</h3>
+                    </a>
+                    <a class="minMainAnchor card glass-effect" href="#" data-tab="pool">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 12.5C12.5 6.03832 17.7382 0.800049 24.2 0.800049C27.1966 0.800049 29.93 1.92658 32 3.77924C34.0699 1.92658 36.8034 0.800049 39.8 0.800049C46.2617 0.800049 51.5 6.03832 51.5 12.5C51.5 13.8675 51.2654 15.1802 50.8342 16.4H55.3999C59.7078 16.4 63.1999 19.8922 63.1999 24.2C63.1999 28.5079 59.7078 32 55.3999 32H35.9V28.1C35.9 25.9461 34.1539 24.2 32 24.2C29.8461 24.2 28.1 25.9461 28.1 28.1V32H8.59998C4.29216 32 0.799988 28.5079 0.799988 24.2C0.799988 19.8922 4.29216 16.4 8.59998 16.4H13.1657C12.7346 15.1802 12.5 13.8675 12.5 12.5ZM28.1 16.4V12.5C28.1 10.3461 26.3539 8.60005 24.2 8.60005C22.0461 8.60005 20.3 10.3461 20.3 12.5C20.3 14.654 22.0461 16.4 24.2 16.4H28.1ZM39.8 16.4C41.9539 16.4 43.7 14.654 43.7 12.5C43.7 10.3461 41.9539 8.60005 39.8 8.60005C37.6461 8.60005 35.9 10.3461 35.9 12.5V16.4H39.8Z"></path>
+                        <path d="M28.1 35.9H4.69999V55.4C4.69999 59.7079 8.19216 63.2 12.5 63.2H28.1V35.9Z"></path>
+                        <path d="M35.9 63.2H51.5C55.8078 63.2 59.2999 59.7079 59.2999 55.4V35.9H35.9V63.2Z"></path>
+                        </svg>
+                        <h3>Pool</h3>
+                    </a>
+                    <a class="minMainAnchor card glass-effect" href="#" data-tab="bridge">
+                        <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M42.0846 10.8846C45.1306 7.83853 50.0693 7.83853 53.1154 10.8846C56.1615 13.9307 56.1615 18.8694 53.1154 21.9155L41.4154 33.6155C38.3693 36.6616 33.4306 36.6616 30.3845 33.6155C28.8615 32.0924 26.3922 32.0924 24.8691 33.6155C23.3461 35.1385 23.3461 37.6079 24.8691 39.1309C30.9613 45.2231 40.8387 45.2231 46.9308 39.1309L58.6308 27.4309C64.723 21.3387 64.723 11.4614 58.6308 5.36918C52.5387 -0.722996 42.6613 -0.722996 36.5691 5.36918L30.7191 11.2192C29.1961 12.7422 29.1961 15.2116 30.7191 16.7346C32.2422 18.2577 34.7115 18.2577 36.2345 16.7346L42.0846 10.8846Z"></path>
+                        <path d="M22.5846 30.3846C25.6307 27.3385 30.5694 27.3385 33.6155 30.3846C35.1385 31.9077 37.6079 31.9077 39.1309 30.3846C40.654 28.8616 40.654 26.3922 39.1309 24.8692C33.0387 18.777 23.1614 18.777 17.0692 24.8692L5.36918 36.5692C-0.722996 42.6614 -0.722996 52.5387 5.36918 58.6309C11.4614 64.7231 21.3387 64.7231 27.4309 58.6309L33.2809 52.7809C34.804 51.2579 34.804 48.7885 33.2809 47.2655C31.7579 45.7424 29.2885 45.7424 27.7655 47.2655L21.9155 53.1155C18.8694 56.1616 13.9307 56.1616 10.8846 53.1155C7.83853 50.0694 7.83853 45.1307 10.8846 42.0846L22.5846 30.3846Z"></path>
+                        </svg>
+                        <h3>Bridge</h3>
+                    </a>
+                    <a class="minMainAnchor card glass-effect" href="#" data-tab="nft">
+                        <svg width="56" height="64" viewBox="0 0 56 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.2 12.5C18.0461 12.5 16.3 14.2461 16.3 16.4C16.3 18.5539 18.0461 20.3 20.2 20.3L41.9846 20.3L36.9423 25.3423C35.4192 26.8654 35.4192 29.3347 36.9423 30.8578C38.4653 32.3808 40.9347 32.3808 42.4577 30.8578L54.1577 19.1578C54.8891 18.4264 55.3 17.4344 55.3 16.4001C55.3 15.3657 54.8891 14.3737 54.1577 13.6423L42.4577 1.94233C40.9347 0.419288 38.4653 0.419287 36.9423 1.94233C35.4192 3.46538 35.4192 5.93472 36.9423 7.45776L41.9846 12.5L20.2 12.5Z"></path>
+                        <path d="M35.8 51.5C37.9539 51.5 39.7 49.754 39.7 47.6001C39.7 45.4461 37.9539 43.7001 35.8 43.7001L14.0154 43.7L19.0577 38.6578C20.5808 37.1347 20.5808 34.6654 19.0577 33.1423C17.5347 31.6193 15.0653 31.6193 13.5423 33.1423L1.84228 44.8423C1.11089 45.5737 0.699997 46.5657 0.699997 47.6C0.699997 48.6344 1.11089 49.6264 1.84228 50.3578L13.5423 62.0578C15.0653 63.5808 17.5347 63.5808 19.0577 62.0578C20.5808 60.5347 20.5808 58.0654 19.0577 56.5423L14.0154 51.5L35.8 51.5Z"></path>
+                        </svg>
+                        <h3>NFT</h3>
+                    </a>
+                    </section>
+                    <section class="content">
+                    <article class="content__info">
+                        <section class="glass-effect">
+                        <h3>Ordinals</h3>
+                        <p>This gives anyone the ability to create a market by depositing their crypto assets into a liquidity pool.</p>
+                        </section>
+                        <section class="glass-effect">
+                        <p>The 1st AMM Dex &amp; DAO based on brc-20 token standard</p>
+                        <img src="assets/images/rocket.332600dd.svg" alt="rocket">
+                        </section>
+                    </article>
+                    <article class="content__detail glass-effect">
+                        <header>
+                        <div class="left">
+                            <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                            <h3>Ordinals <span>ORDI</span>
+                            </h3>
+                        </div>
+                        <div class="btn-group btn-group-vertical lg:btn-group-horizontal bg-white p-1 ">
+                            <button class="bg-white btn btn-active">DAY</button>
+                            <button class="bg-white btn false">WEEK</button>
+                            <button class="bg-white btn false">MONTH</button>
+                            <button class="bg-white btn false">YEAR</button>
+                        </div>
+                        </header>
+                        <canvas id="myChart" role="img" height="780" width="1561" style="display: block; box-sizing: border-box; height: 312px; width: 624px;"></canvas>
+                        <h3 class="money">$53.57</h3>
+                        <p class="ratio" style="color: green;">8.73% <img src="assets/images/ratio-green.94875dd3.svg" alt="ratio down" style="transform: rotate(270deg);">
+                        </p>
+                    </article>
+                    </section>
+                </section>
+                <section id="swap" class="exchange__container tabContent hidden">
+                    <section class="exchange__container-swap glass-effect center-margin">
+                      <header>
+                        <div>
+                          <h2>Swap</h2>
+                          <p>Trade tokens in an instant</p>
+                        </div>
+                        <div class="btn-actions">
+                          <button class="setting__wrapper">
+                            <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M32.6851 13.5559H31.9187C31.6691 12.7779 31.3556 12.0232 30.9841 11.2975L31.524 10.7576C32.836 9.44557 32.8012 7.34398 31.524 6.07257L29.9275 4.47605C28.6502 3.19884 26.5544 3.16401 25.2424 4.47605L24.7025 5.01597C23.9768 4.63861 23.2221 4.32511 22.4441 4.08128V3.31495C22.4441 1.48621 20.9579 0 19.1292 0H16.8708C15.0421 0 13.5559 1.48621 13.5559 3.31495V4.08128C12.778 4.33091 12.0232 4.64441 11.2975 5.01597L10.7576 4.47605C9.45139 3.16401 7.34979 3.19884 6.07258 4.47605L4.47606 6.07257C3.19885 7.34978 3.16402 9.44557 4.47606 10.7576L5.01597 11.2975C4.63861 12.0232 4.32513 12.7779 4.08129 13.5559H3.31496C1.48622 13.5559 0 15.0421 0 16.8708V19.1292C0 20.9579 1.48622 22.4441 3.31496 22.4441H4.08129C4.33093 23.2221 4.64442 23.9768 5.01597 24.7025L4.47606 25.2424C3.16402 26.5544 3.19885 28.656 4.47606 29.9274L6.07258 31.5239C7.34979 32.8012 9.44559 32.836 10.7576 31.5239L11.2975 30.984C12.0232 31.3614 12.778 31.6749 13.5559 31.9187V32.685C13.5559 34.5138 15.0421 36 16.8708 36H19.1292C20.9579 36 22.4441 34.5138 22.4441 32.685V31.9187C23.2221 31.6691 23.9768 31.3556 24.7025 30.984L25.2424 31.5239C26.5486 32.836 28.6502 32.8012 29.9275 31.5239L31.524 29.9274C32.8012 28.6502 32.836 26.5544 31.524 25.2424L30.9841 24.7025C31.3614 23.9768 31.6749 23.2221 31.9187 22.4441H32.6851C34.5138 22.4441 36 20.9579 36 19.1292V16.8708C36 15.0421 34.5138 13.5559 32.6851 13.5559ZM18.0029 25.8287C13.6836 25.8287 10.1713 22.3164 10.1713 17.9971C10.1713 13.6778 13.6836 10.1655 18.0029 10.1655C22.3222 10.1655 25.8345 13.6778 25.8345 17.9971C25.8345 22.3164 22.3222 25.8287 18.0029 25.8287Z"></path>
+                            </svg>
+                          </button>
+                          <button>
+                            <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15.544 28.080c-0.002-0.006-0.008-0.010-0.012-0.015l-2.873-4.489c-0.204-0.335-0.646-0.454-0.992-0.266l-0.256 0.157c-0.344 0.188-0.337 0.673-0.133 1.008l1.841 2.857c-0.157-0.035-0.316-0.063-0.471-0.103-3.224-0.843-5.953-3.026-7.485-5.988-1.448-2.797-1.72-5.99-0.766-8.992s3.118-5.452 5.915-6.899c0.476-0.247 0.662-0.832 0.416-1.308-0.246-0.477-0.832-0.663-1.308-0.416-3.258 1.686-5.763 4.54-6.874 8.036s-0.794 7.215 0.892 10.473c1.786 3.448 4.963 5.989 8.72 6.973 0.043 0.011 0.087 0.017 0.13 0.028l-2.541 1.288c-0.344 0.189-0.458 0.613-0.254 0.948l0.098 0.256c0.205 0.335 0.557 0.454 0.9 0.266l4.651-2.381c0.006-0.004 0.012-0.003 0.018-0.007l0.312-0.171c0.172-0.095 0.287-0.249 0.332-0.422 0.047-0.172 0.025-0.364-0.076-0.531zM28.559 10.025c-1.783-3.447-4.862-5.988-8.618-6.972-0.267-0.070-0.541-0.124-0.814-0.179l2.494-1.265c0.344-0.189 0.549-0.614 0.345-0.949l-0.099-0.255c-0.205-0.336-0.648-0.454-0.991-0.267l-4.651 2.381c-0.006 0.003-0.012 0.002-0.018 0.006l-0.312 0.171c-0.173 0.095-0.287 0.249-0.332 0.422-0.047 0.172-0.025 0.364 0.077 0.53l0.185 0.304c0.003 0.006 0.008 0.010 0.012 0.016l2.873 4.489c0.203 0.335 0.646 0.454 0.991 0.266l0.226-0.157c0.344-0.188 0.366-0.673 0.163-1.008l-1.85-2.87c0.407 0.063 0.811 0.138 1.207 0.242 3.226 0.845 5.856 3.027 7.387 5.986 1.448 2.797 1.72 5.99 0.765 8.991s-3.020 5.451-5.818 6.901c-0.476 0.247-0.662 0.831-0.415 1.308 0.172 0.332 0.511 0.524 0.863 0.524 0.15 0 0.302-0.035 0.446-0.109 3.259-1.686 5.664-4.54 6.776-8.035 1.111-3.497 0.794-7.217-0.893-10.473z"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </header>
+                      <form class="swap__form center-margin">
+                        <div class="exchange__select ">
+                          <input type="text" class="value" placeholder="0" value="11">
+                          <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                            <button class="bordered ">
+                              <img src="data:image/png;base64,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" alt="" class="icon">BTC <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                              </svg>
+                            </button>
+                            <section class="datalist__container">
+                              <div class="datalist__input">
+                                <img src="assets/images/search.7c1657da.svg" alt="search">
+                                <input type="text" placeholder="Search" value="">
+                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                              </div>
+                              <div class="datalist__options">
+                                <div class="datalist__option ">
+                                  <img src="data:image/png;base64,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">
+                                  <p>BTC</p>
+                                </div>
+                              </div>
+                            </section>
+                          </section>
+                        </div>
+                        <button>
+                          <div class="flex justify-center">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="10.000000px" height="30px" viewBox="0 0 74.000000 186.000000" preserveAspectRatio="xMidYMid meet">
+                              <g id="Complete">
+                                <g id="arrow-down">
+                                  <g transform="translate(0.000000,186.000000) scale(0.100000,-0.100000)" stroke="none">
+                                    <path d="M338 1679 c-20 -11 -309 -362 -327 -397 -23 -44 13 -102 64 -102 40 0 48 7 135 115 40 50 76 92 81 93 5 2 9 -208 9 -478 0 -270 -4 -480 -9 -478 -5 2 -41 44 -81 93 -87 108 -95 115 -135 115 -54 0 -87 -58 -61 -107 8 -15 82 -109 163 -208 155 -187 182 -210 225 -186 35 20 328 386 334 418 8 41 -27 83 -69 83 -42 0 -40 1 -131 -110 -43 -52 -81 -96 -85 -98 -3 -1 -6 214 -6 478 0 264 3 479 7 478 4 -2 41 -46 84 -98 88 -109 88 -110 131 -110 42 0 77 42 69 82 -6 29 -290 386 -329 413 -25 17 -45 19 -69 4z"></path>
+                                  </g>
+                                </g>
+                              </g>
+                            </svg>
+                          </div>
+                        </button>
+                        <div class="exchange__select ">
+                          <input type="text" class="value" placeholder="0" disabled="" value="">
+                          <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                            <button class="filled ">
+                              <img src="assets/images/ordinals.b8503947.svg" alt="" class="icon">Select Token <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                              </svg>
+                            </button>
+                            <section class="datalist__container">
+                              <div class="datalist__input">
+                                <img src="assets/images/search.7c1657da.svg" alt="search">
+                                <input type="text" placeholder="Search" value="">
+                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                              </div>
+                              <div class="datalist__options"></div>
+                            </section>
+                          </section>
+                        </div>
+                        <button class="d-btn d-btn-primary center-margin active">Connect Wallet</button>
+                      </form>
+                    </section>
+                    <div class="d-divider center-margin mb-14"></div>
+                    <section class="table__container">
+                      <header class="flex items-center">
+                        <h3>Swap Order List</h3>
+                        <section class="filters__container ">
+                          <h5>All <span class="icon-s">
+                              <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.299805 1.3002C0.299805 0.692682 0.792291 0.200195 1.3998 0.200195H14.5998C15.2073 0.200195 15.6998 0.692682 15.6998 1.3002V4.6002C15.6998 4.89193 15.5839 5.17172 15.3776 5.37801L10.1998 10.5558V14.5002C10.1998 14.7919 10.0839 15.0717 9.87762 15.278L7.67762 17.478C7.36302 17.7926 6.88989 17.8867 6.47885 17.7165C6.06781 17.5462 5.7998 17.1451 5.7998 16.7002V10.5558L0.621987 5.37801C0.415697 5.17172 0.299805 4.89193 0.299805 4.6002V1.3002Z" fill="inherit"></path>
+                              </svg>
+                            </span>
+                          </h5>
+                          <ul class="filters__list ">
+                            <li class="filter__item active">All <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                            <li class="filter__item ">Pending <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                            <li class="filter__item ">Failed <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                            <li class="filter__item ">Success <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                          </ul>
+                        </section>
+                      </header>
+                      <div class="table__content overflow-x-auto">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>
+                                <span>No</span>
+                              </th>
+                              <th>Transaction</th>
+                              <th>
+                                <span>Fee Rate</span>
+                              </th>
+                              <th>
+                                <span>Ordered Time</span>
+                              </th>
+                              <th>Send Token</th>
+                              <th>Send Amount</th>
+                              <th>Send</th>
+                              <th>Receive Token</th>
+                              <th>Receive Amount</th>
+                              <th>Order status</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="7">
+                                <span class="nodata__container">
+                                  <svg width="46" height="47" viewBox="0 0 46 47" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M45 25.9012V6.65125C45 3.61368 42.5376 1.15125 39.5 1.15125H6.5C3.46243 1.15125 1 3.61368 1 6.65125V25.9012M45 25.9012V39.6512C45 42.6888 42.5376 45.1512 39.5 45.1512H6.5C3.46243 45.1512 1 42.6888 1 39.6512V25.9012M45 25.9012H37.8891C37.1597 25.9012 36.4603 26.191 35.9445 26.7067L29.3055 33.3458C28.7897 33.8615 28.0903 34.1512 27.3609 34.1512H18.6391C17.9097 34.1512 17.2103 33.8615 16.6945 33.3458L10.0555 26.7067C9.53973 26.191 8.84026 25.9012 8.11091 25.9012H1" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>No Data </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </section>
+                  <section id="liquidity" class="exchange__container tabContent hidden">
+                    <section class="top">
+                      <section class="btn-actions">
+                        <button class="d-btn d-btn-primary d-btn-condensed active">Add Liquidity</button>
+                        <button class="d-btn d-btn-primary d-btn-condensed ">Remove Liquidity</button>
+                      </section>
+                      <section class="exchange__container-swap glass-effect center-margin">
+                        <h2 class="text-center">Add liquidity </h2>
+                        <form class="swap__form center-margin full-w-select">
+                          <div class="exchange__select ">
+                            <input type="text" class="value" placeholder="0" value="">
+                            <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                              <button class="bordered ">
+                                <img src="data:image/png;base64,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" alt="" class="icon">BTC <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                              </button>
+                              <section class="datalist__container">
+                                <div class="datalist__input">
+                                  <img src="assets/images/search.7c1657da.svg" alt="search">
+                                  <input type="text" placeholder="Search" value="">
+                                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                  </svg>
+                                </div>
+                                <div class="datalist__options">
+                                  <div class="datalist__option ">
+                                    <img src="data:image/png;base64,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">
+                                    <p>BTC</p>
+                                  </div>
+                                </div>
+                              </section>
+                            </section>
+                          </div>
+                          <button>
+                            <div class="flex justify-center">
+                              <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="10.000000px" height="30px" viewBox="0 0 74.000000 186.000000" preserveAspectRatio="xMidYMid meet">
+                                <g id="Complete">
+                                  <g id="arrow-down">
+                                    <g transform="translate(0.000000,186.000000) scale(0.100000,-0.100000)" stroke="none">
+                                      <path d="M338 1679 c-20 -11 -309 -362 -327 -397 -23 -44 13 -102 64 -102 40 0 48 7 135 115 40 50 76 92 81 93 5 2 9 -208 9 -478 0 -270 -4 -480 -9 -478 -5 2 -41 44 -81 93 -87 108 -95 115 -135 115 -54 0 -87 -58 -61 -107 8 -15 82 -109 163 -208 155 -187 182 -210 225 -186 35 20 328 386 334 418 8 41 -27 83 -69 83 -42 0 -40 1 -131 -110 -43 -52 -81 -96 -85 -98 -3 -1 -6 214 -6 478 0 264 3 479 7 478 4 -2 41 -46 84 -98 88 -109 88 -110 131 -110 42 0 77 42 69 82 -6 29 -290 386 -329 413 -25 17 -45 19 -69 4z"></path>
+                                    </g>
+                                  </g>
+                                </g>
+                              </svg>
+                            </div>
+                          </button>
+                          <div class="exchange__select ">
+                            <input type="text" class="value" placeholder="0" value="">
+                            <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                              <button class="bordered ">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="" class="icon">Select Token <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                              </button>
+                              <section class="datalist__container">
+                                <div class="datalist__input">
+                                  <img src="assets/images/search.7c1657da.svg" alt="search">
+                                  <input type="text" placeholder="Search" value="">
+                                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                  </svg>
+                                </div>
+                                <div class="datalist__options"></div>
+                              </section>
+                            </section>
+                          </div>
+                          <p class="text-center">Select available token pair.</p>
+                          <div class="exchange__select ">
+                            <input type="text" class="value" placeholder="0" disabled="" value="">
+                            <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                              <button class="bordered " disabled="">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="" class="icon">No pool <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                </svg>
+                              </button>
+                              <section class="datalist__container">
+                                <div class="datalist__input">
+                                  <img src="assets/images/search.7c1657da.svg" alt="search">
+                                  <input type="text" placeholder="Search" value="">
+                                  <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                  </svg>
+                                </div>
+                                <div class="datalist__options"></div>
+                              </section>
+                            </section>
+                          </div>
+                          <button class="d-btn d-btn-primary center-margin active">Connect Wallet</button>
+                        </form>
+                      </section>
+                      <div class="d-divider center-margin mb-14"></div>
+                      <section class="table__container">
+                        <header class="flex items-center">
+                          <h3>Add liquidity Order List</h3>
+                          <section class="filters__container ">
+                            <h5>All <span class="icon-s">
+                                <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.299805 1.3002C0.299805 0.692682 0.792291 0.200195 1.3998 0.200195H14.5998C15.2073 0.200195 15.6998 0.692682 15.6998 1.3002V4.6002C15.6998 4.89193 15.5839 5.17172 15.3776 5.37801L10.1998 10.5558V14.5002C10.1998 14.7919 10.0839 15.0717 9.87762 15.278L7.67762 17.478C7.36302 17.7926 6.88989 17.8867 6.47885 17.7165C6.06781 17.5462 5.7998 17.1451 5.7998 16.7002V10.5558L0.621987 5.37801C0.415697 5.17172 0.299805 4.89193 0.299805 4.6002V1.3002Z" fill="inherit"></path>
+                                </svg>
+                              </span>
+                            </h5>
+                            <ul class="filters__list ">
+                              <li class="filter__item active">All <span class="icon-xs">
+                                  <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                  </svg>
+                                </span>
+                              </li>
+                              <li class="filter__item ">Pending <span class="icon-xs">
+                                  <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                  </svg>
+                                </span>
+                              </li>
+                              <li class="filter__item ">Failed <span class="icon-xs">
+                                  <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                  </svg>
+                                </span>
+                              </li>
+                              <li class="filter__item ">Success <span class="icon-xs">
+                                  <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                  </svg>
+                                </span>
+                              </li>
+                            </ul>
+                          </section>
+                        </header>
+                        <div class="table__content overflow-x-auto">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>
+                                  <span>No</span>
+                                </th>
+                                <th>Transaction</th>
+                                <th>
+                                  <span>Fee Rate</span>
+                                </th>
+                                <th>
+                                  <span>Ordered Time</span>
+                                </th>
+                                <th>Token Pair</th>
+                                <th>Token Amount</th>
+                                <th>Token1</th>
+                                <th>Token2</th>
+                                <th>LP Token</th>
+                                <th>Rewards</th>
+                                <th>Order status</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td colspan="7">
+                                  <span class="nodata__container">
+                                    <svg width="46" height="47" viewBox="0 0 46 47" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M45 25.9012V6.65125C45 3.61368 42.5376 1.15125 39.5 1.15125H6.5C3.46243 1.15125 1 3.61368 1 6.65125V25.9012M45 25.9012V39.6512C45 42.6888 42.5376 45.1512 39.5 45.1512H6.5C3.46243 45.1512 1 42.6888 1 39.6512V25.9012M45 25.9012H37.8891C37.1597 25.9012 36.4603 26.191 35.9445 26.7067L29.3055 33.3458C28.7897 33.8615 28.0903 34.1512 27.3609 34.1512H18.6391C17.9097 34.1512 17.2103 33.8615 16.6945 33.3458L10.0555 26.7067C9.53973 26.191 8.84026 25.9012 8.11091 25.9012H1" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>No Data </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </section>
+                  </section>
+                  <section id="pool" class="pool__container tabContent hidden">
+                    <section class="pool__content glass-effect center-margin">
+                      <h2 class="text-center">Create a new pool</h2>
+                      <form class="swap__form center-margin">
+                        <div class="exchange__select full-w">
+                          <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                            <button class="bordered ">
+                              <img src="data:image/png;base64,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" alt="" class="icon">BTC <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                              </svg>
+                            </button>
+                            <section class="datalist__container">
+                              <div class="datalist__input">
+                                <img src="assets/images/search.7c1657da.svg" alt="search">
+                                <input type="text" placeholder="Search" value="">
+                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                              </div>
+                              <div class="datalist__options">
+                                <div class="datalist__option ">
+                                  <img src="data:image/png;base64,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">
+                                  <p>BTC</p>
+                                </div>
+                              </div>
+                            </section>
+                          </section>
+                        </div>
+                        <button>
+                          <div class="flex justify-center">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="10.000000px" height="30px" viewBox="0 0 74.000000 186.000000" preserveAspectRatio="xMidYMid meet">
+                              <g id="Complete">
+                                <g id="arrow-down">
+                                  <g transform="translate(0.000000,186.000000) scale(0.100000,-0.100000)" stroke="none">
+                                    <path d="M338 1679 c-20 -11 -309 -362 -327 -397 -23 -44 13 -102 64 -102 40 0 48 7 135 115 40 50 76 92 81 93 5 2 9 -208 9 -478 0 -270 -4 -480 -9 -478 -5 2 -41 44 -81 93 -87 108 -95 115 -135 115 -54 0 -87 -58 -61 -107 8 -15 82 -109 163 -208 155 -187 182 -210 225 -186 35 20 328 386 334 418 8 41 -27 83 -69 83 -42 0 -40 1 -131 -110 -43 -52 -81 -96 -85 -98 -3 -1 -6 214 -6 478 0 264 3 479 7 478 4 -2 41 -46 84 -98 88 -109 88 -110 131 -110 42 0 77 42 69 82 -6 29 -290 386 -329 413 -25 17 -45 19 -69 4z"></path>
+                                  </g>
+                                </g>
+                              </g>
+                            </svg>
+                          </div>
+                        </button>
+                        <div class="exchange__select full-w">
+                          <section class="datalist__wrapper" data-tooltip-delay-hide="50000">
+                            <button class="bordered ">
+                              <img src="assets/images/ordinals.b8503947.svg" alt="" class="icon">Select a token <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                              </svg>
+                            </button>
+                            <section class="datalist__container">
+                              <div class="datalist__input">
+                                <img src="assets/images/search.7c1657da.svg" alt="search">
+                                <input type="text" placeholder="Search" value="">
+                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                                </svg>
+                              </div>
+                              <div class="datalist__options"></div>
+                            </section>
+                          </section>
+                        </div>
+                        <div class="token__container">
+                          <p>LP Token to Deploy</p>
+                          <div class="token__container__input">
+                            <input type="text" name="tokenName" id="tokenName" placeholder="Token ticker" autocomplete="off" value="">
+                            <input type="text" name="maxSupply" id="maxSupply" placeholder="Max Supply" autocomplete="off" value="">
+                          </div>
+                        </div>
+                        <button class="d-btn d-btn-primary center-margin active">Connect wallet</button>
+                      </form>
+                    </section>
+                    <section class="table__container mb-14">
+                      <header class="flex items-center">
+                        <h3>Create new pool Order List</h3>
+                        <section class="filters__container ">
+                          <h5>All <span class="icon-s">
+                              <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.299805 1.3002C0.299805 0.692682 0.792291 0.200195 1.3998 0.200195H14.5998C15.2073 0.200195 15.6998 0.692682 15.6998 1.3002V4.6002C15.6998 4.89193 15.5839 5.17172 15.3776 5.37801L10.1998 10.5558V14.5002C10.1998 14.7919 10.0839 15.0717 9.87762 15.278L7.67762 17.478C7.36302 17.7926 6.88989 17.8867 6.47885 17.7165C6.06781 17.5462 5.7998 17.1451 5.7998 16.7002V10.5558L0.621987 5.37801C0.415697 5.17172 0.299805 4.89193 0.299805 4.6002V1.3002Z" fill="inherit"></path>
+                              </svg>
+                            </span>
+                          </h5>
+                          <ul class="filters__list ">
+                            <li class="filter__item active">All <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                            <li class="filter__item ">Pending <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                            <li class="filter__item ">Failed <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                            <li class="filter__item ">Success <span class="icon-xs">
+                                <svg fill="inherti" width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM22.386 10.146l-9.388 9.446-4.228-4.227c-0.39-0.39-1.024-0.39-1.415 0s-0.391 1.023 0 1.414l4.95 4.95c0.39 0.39 1.024 0.39 1.415 0 0.045-0.045 0.084-0.094 0.119-0.145l9.962-10.024c0.39-0.39 0.39-1.024 0-1.415s-1.024-0.39-1.415 0z"></path>
+                                </svg>
+                              </span>
+                            </li>
+                          </ul>
+                        </section>
+                      </header>
+                      <div class="table__content overflow-x-auto">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>
+                                <span>No</span>
+                              </th>
+                              <th>Transaction</th>
+                              <th>
+                                <span>Fee Rate</span>
+                              </th>
+                              <th>
+                                <span>Ordered Time</span>
+                              </th>
+                              <th>Token Pair</th>
+                              <th>LP Token</th>
+                              <th>Order Status</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td colspan="7">
+                                <span class="nodata__container">
+                                  <svg width="46" height="47" viewBox="0 0 46 47" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M45 25.9012V6.65125C45 3.61368 42.5376 1.15125 39.5 1.15125H6.5C3.46243 1.15125 1 3.61368 1 6.65125V25.9012M45 25.9012V39.6512C45 42.6888 42.5376 45.1512 39.5 45.1512H6.5C3.46243 45.1512 1 42.6888 1 39.6512V25.9012M45 25.9012H37.8891C37.1597 25.9012 36.4603 26.191 35.9445 26.7067L29.3055 33.3458C28.7897 33.8615 28.0903 34.1512 27.3609 34.1512H18.6391C17.9097 34.1512 17.2103 33.8615 16.6945 33.3458L10.0555 26.7067C9.53973 26.191 8.84026 25.9012 8.11091 25.9012H1" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                  </svg>No Data </span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </section>
+                  <section id="bridge" class="backdrop__container bridge__container tabContent hidden">
+                    <section class="modal__content">
+                      <h2>Coming Soon.</h2>
+                    </section>
+                  </section>                 
+                  <section id="nft" class="nft__container tabContent hidden">
+                    <section class="backdrop__container">
+                      <h2>Coming Soon.</h2>
+                    </section>
+                    <div class="btn-actions pb-12">
+                      <a class="d-btn d-btn-primary flex items-center gap-4" href="#">
+                        <svg width="24" height="22" viewBox="0 0 24 22" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.37969 0.791016C6.57739 0.791016 5.92699 1.44141 5.92699 2.24371C5.92699 3.04601 6.57739 3.69641 7.37969 3.69641H16.0959C16.8982 3.69641 17.5486 3.04601 17.5486 2.24371C17.5486 1.44141 16.8982 0.791016 16.0959 0.791016H7.37969Z" fill="inherit"></path>
+                          <path d="M3.0216 6.6018C3.0216 5.7995 3.672 5.1491 4.4743 5.1491H19.0013C19.8036 5.1491 20.454 5.7995 20.454 6.6018C20.454 7.4041 19.8036 8.05449 19.0013 8.05449H4.4743C3.672 8.05449 3.0216 7.4041 3.0216 6.6018Z" fill="inherit"></path>
+                          <path d="M0.116211 12.4126C0.116211 10.808 1.417 9.50719 3.0216 9.50719H20.454C22.0586 9.50719 23.3593 10.808 23.3593 12.4126V18.2234C23.3593 19.828 22.0586 21.1288 20.454 21.1288H3.0216C1.417 21.1288 0.116211 19.828 0.116211 18.2234V12.4126Z" fill="inherit"></path>
+                        </svg>NFT Collection </a>
+                      <a class="d-btn d-btn-primary flex items-center gap-4" href="#">
+                        <svg width="21" height="24" viewBox="0 0 21 24" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.569336 22.1283C0.569336 21.326 1.21973 20.6756 2.02203 20.6756H19.4544C20.2567 20.6756 20.9071 21.326 20.9071 22.1283C20.9071 22.9306 20.2567 23.581 19.4544 23.581H2.02203C1.21973 23.581 0.569336 22.9306 0.569336 22.1283ZM5.35291 7.17588C4.7856 6.60857 4.7856 5.68878 5.35291 5.12146L9.71099 0.763376C9.98343 0.490943 10.3529 0.337891 10.7382 0.337891C11.1235 0.337891 11.493 0.490943 11.7654 0.763376L16.1235 5.12146C16.6908 5.68878 16.6908 6.60857 16.1235 7.17588C15.5562 7.7432 14.6364 7.7432 14.0691 7.17588L12.1909 5.2977L12.1909 16.3175C12.1909 17.1198 11.5405 17.7702 10.7382 17.7702C9.9359 17.7702 9.28551 17.1198 9.28551 16.3175L9.28551 5.29771L7.40733 7.17588C6.84002 7.7432 5.92022 7.7432 5.35291 7.17588Z" fill="inherit"></path>
+                        </svg>NFT Upload </a>
+                    </div>
+                    <section class="nft__collection">
+                      <header>
+                        <h1>DexOrdi Collectibles</h1>
+                        <div class="search-bar">
+                          <img src="assets/images/search.7c1657da.svg" alt="search">
+                          <input type="text" name="search" id="search" placeholder="Search">
+                        </div>
+                      </header>
+                      <section class="collection__list">
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#160</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#161</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#162</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#163</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#164</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#165</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/nft-image.9a690549.png" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#166</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#167</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                        <a class="card bg-base-100 shadow-xl" href="#">
+                          <figure>
+                            <img src="assets/images/nft-image.9a690549.png" alt="Shoes" loading="lazy">
+                          </figure>
+                          <div class="card-body">
+                            <div class="top">
+                              <div class="card-title">
+                                <h4>Name here</h4>
+                                <p>Enter your description here</p>
+                              </div>
+                              <div class="price">
+                                <img src="assets/images/ordinals.b8503947.svg" alt="ordinals">
+                                <span>0.325</span>
+                              </div>
+                            </div>
+                            <div class="card-actions justify-between">
+                              <span class="id">#168</span>
+                              <button class="d-btn d-btn-primary active">Buy Now</button>
+                            </div>
+                          </div>
+                        </a>
+                      </section>
+                    </section>
+                  </section>          
+                <section id="dao" class="backdrop__container bridge__container tabContent hidden">
+                    <section class="modal__content">
+                        <h2>Coming Soon.</h2>
+                    </section>
+                </section>
+            </section>
+        </main>
+    </main>
+
+    <script src="assets/js/themeChanger.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/tabchanger.js"></script>
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+    
+        var myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+              data: [820, 932, 901, 934, 1290, 1330, 1320],
+              borderColor: '#6900FF', // Line color
+              backgroundColor: 'rgba(153, 102, 255, 0.3)', // Area color
+              borderWidth: 2,
+              fill: true,
+            }]
+          },
+          options: {
+            scales: {
+              x: {
+                display: false, // Hide x-axis labels
+              },
+              y: {
+                display: false, // Hide y-axis labels
+              }
+            },
+            plugins: {
+          legend: {
+            display: false, // Hide legend
+          },
+        },
+          },
+        });
+      </script>
+  </body>
+</html>

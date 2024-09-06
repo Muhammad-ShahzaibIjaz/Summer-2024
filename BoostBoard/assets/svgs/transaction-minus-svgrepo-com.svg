@@ -1,0 +1,35 @@
+<svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="35" height="35" fill="#1E1E1E"/>
+<g id="Expans Dasboard" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="1908" transform="translate(-69 -1058)" fill="#F0F2F3"/>
+<rect id="Rectangle 5490" x="-69" y="-1058" width="175.391" height="1360.61" fill="white"/>
+<g id="Rectangle 5498">
+<mask id="path-2-inside-1_0_1" fill="white">
+<path d="M-69 -1058H326V850H-69V-1058Z"/>
+</mask>
+<path d="M-69 -1058H326V850H-69V-1058Z" fill="white"/>
+<path d="M325 -1058V850H327V-1058H325Z" fill="#B9B9B9" mask="url(#path-2-inside-1_0_1)"/>
+</g>
+<g id="Group 1171275937">
+<g id="Group 1171275936">
+<g id="Group 1171275935">
+<g id="Group 1171275933">
+<g id="Group 1171275932">
+<g id="Frame 1321315189">
+<g id="transaction-minus-svgrepo-com 1">
+<path id="Vector" d="M9.78168 28.7758C10.962 27.5091 12.7614 27.6099 13.7978 28.9918L15.2515 30.935C16.4175 32.4752 18.3032 32.4752 19.4691 30.935L20.923 28.9918C21.9594 27.6099 23.7587 27.5091 24.939 28.7758C27.5012 31.5108 29.5884 30.6039 29.5884 26.775V10.5525C29.5884 4.75149 28.2354 3.29765 22.7942 3.29765H11.9121C6.47098 3.29765 5.11789 4.75149 5.11789 10.5525V26.7606C5.13228 30.6039 7.23386 31.4964 9.78168 28.7758Z" fill="#A1A1AA"/>
+<path id="Vector_2" d="M21.3257 15.8928H13.4088C12.8186 15.8928 12.3292 15.4034 12.3292 14.8132C12.3292 14.223 12.8186 13.7336 13.4088 13.7336H21.3257C21.9159 13.7336 22.4053 14.223 22.4053 14.8132C22.4053 15.4034 21.9159 15.8928 21.3257 15.8928Z" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="1908" fill="white" transform="translate(-69 -1058)"/>
+</clipPath>
+</defs>
+</svg>

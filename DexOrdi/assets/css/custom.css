@@ -1,0 +1,26 @@
+html{
+    --color-base: #ffffff; 
+    --color-base1: #ffffff; 
+    --color-base2: #ffffff; 
+    --color-text: #000; 
+    --color-backgroundDim: rgba(255, 255, 255, 0.5); 
+    --color-boxShadow: 0px 4px 20px rgba(0, 0, 0, 0.11); 
+    --color-border: #f0f0f0;
+    --theme: light;
+}
+
+.tabContent.hidden{
+    display: none;
+}
+
+.d-none{
+    display: none!important;
+}
+
+
+@media (max-width:400px) {
+    .dashboard__container .content__detail header{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}

@@ -1,0 +1,37 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="34" height="34" fill="#1E1E1E"/>
+<g id="Expans Dasboard" clip-path="url(#clip0_0_1)">
+<rect width="1920" height="1908" transform="translate(-69 -972)" fill="#F0F2F3"/>
+<rect id="Rectangle 5490" x="-69" y="-972" width="175.391" height="1360.61" fill="white"/>
+<g id="Rectangle 5498">
+<mask id="path-2-inside-1_0_1" fill="white">
+<path d="M-69 -972H326V936H-69V-972Z"/>
+</mask>
+<path d="M-69 -972H326V936H-69V-972Z" fill="white"/>
+<path d="M325 -972V936H327V-972H325Z" fill="#B9B9B9" mask="url(#path-2-inside-1_0_1)"/>
+</g>
+<g id="Group 1171275937">
+<g id="Group 1171275936">
+<g id="Group 1171275935">
+<g id="Group 1171275933">
+<g id="Group 1171275932">
+<g id="Frame 1321315189">
+<g id="diamond-premium-svgrepo-com 1" clip-path="url(#clip1_0_1)">
+<path id="diamond premium" d="M15.1783 4.18588L15.8693 3.38194H8.31664L0.811676 12.0363H8.42728L15.1783 4.18588ZM10.2347 12.0345H24.5001L20.6222 7.52403L17.3689 3.74035L12.4523 9.45676L10.2347 12.0345ZM0.902898 13.4052L15.0865 28.328L8.30369 13.4052H0.902898ZM24.9291 13.4052H23.6932H18.4971H9.80622L17.3241 29.943L17.3724 30.0477L24.5348 14.2751L24.9291 13.4052ZM19.6676 28.308L33.826 13.4064H26.4346L19.6676 28.308ZM33.919 12.0351L26.4128 3.38487H18.8667L26.3069 12.0363L33.919 12.0351Z" fill="#A1A1AA"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1920" height="1908" fill="white" transform="translate(-69 -972)"/>
+</clipPath>
+<clipPath id="clip1_0_1">
+<rect width="33.1073" height="33.1073" fill="white" transform="translate(0.813019 0.162689)"/>
+</clipPath>
+</defs>
+</svg>
